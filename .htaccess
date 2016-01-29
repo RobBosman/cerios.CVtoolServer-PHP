@@ -1,0 +1,11 @@
+<FilesMatch "CVtool\.(swf|html)$">
+	Header set Cache-Control "max-age=0"
+</FilesMatch>
+
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteCond %{HTTP_HOST} ^.*ita\.cerios\.nl [NC]
+RewriteRule ^(.*)$ https://cvtool.cerios.nl/cvtool/ [R=301,L]
+
+DirectoryIndex CVtool.html

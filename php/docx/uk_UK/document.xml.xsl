@@ -553,7 +553,7 @@
 							<w:pStyle w:val="Heading2"/>
 						</w:pPr>
 						<w:r>
-							<w:t>Training</w:t>
+							<w:t>Education</w:t>
 						</w:r>
 					</w:p>
 					<w:tbl>
@@ -811,7 +811,7 @@
 							<w:pStyle w:val="Heading2"/>
 						</w:pPr>
 						<w:r>
-							<w:t>Skills and knowledge</w:t>
+							<w:t>Profesional skills and knowledge</w:t>
 						</w:r>
 					</w:p>
 					<w:p w:rsidR="0091280F" w:rsidRDefault="0091280F" w:rsidP="00D2745D">
@@ -1285,7 +1285,7 @@
 				<w:pStyle w:val="Heading2"/>
 			</w:pPr>
 			<w:r>
-				<w:t>Principal</w:t>
+				<w:t>Client</w:t>
 				<w:tab/>
 				<w:t>
 					<xsl:value-of select="cv:opdrachtgever" />

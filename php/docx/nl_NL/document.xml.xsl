@@ -913,6 +913,48 @@
 				</xsl:if>
 				<!--
 				
+					PUBLICATIES
+				
+				-->
+				<xsl:variable name="publicaties" select="//cv:publicatie[normalize-space()]" />
+				<xsl:if test="$publicaties">
+					<w:p w:rsidR="00480FB7" w:rsidRDefault="00480FB7" w:rsidP="00C443E7">
+						<w:pPr>
+							<w:pStyle w:val="Heading2"/>
+						</w:pPr>
+						<w:r>
+							<w:t>Publicaties</w:t>
+						</w:r>
+					</w:p>
+					<w:p w:rsidR="0091280F" w:rsidRDefault="0091280F" w:rsidP="00D2745D">
+						<w:pPr>
+							<w:sectPr w:rsidR="0091280F" w:rsidSect="00D97F86">
+								<w:headerReference w:type="default" r:id="rId10"/>
+								<w:footerReference w:type="default" r:id="rId11"/>
+								<xsl:if test="($layout = '') or not(//cv:visitekaartje)">
+									<w:headerReference w:type="first" r:id="rId10"/>
+								</xsl:if>
+								<w:footerReference w:type="first" r:id="rId11"/>
+								<w:type w:val="continuous"/>
+								<w:pgSz w:w="11906" w:h="16838"/>
+								<w:pgMar w:top="1985" w:right="1418" w:bottom="1418" w:left="1418" w:header="567" w:footer="709" w:gutter="0"/>
+								<w:cols w:space="708"/>
+								<w:titlePg/>
+								<w:docGrid w:linePitch="360"/>
+							</w:sectPr>
+						</w:pPr>
+					</w:p>
+					<w:p w:rsidR="00D2745D" w:rsidRDefault="00D2745D" w:rsidP="00455566">
+						<w:pPr>
+							<w:pStyle w:val="kolomeinde"/>
+						</w:pPr>
+					</w:p>
+					<xsl:apply-templates select="$publicaties">
+						<xsl:sort select="cv:jaar" order="descending" data-type="number" />
+					</xsl:apply-templates>
+				</xsl:if>
+				<!--
+				
 					WERKERVARING
 				
 				-->
@@ -1276,6 +1318,34 @@
 				</w:p>
 			</w:tc>
 		</w:tr>
+	</xsl:template>
+    
+	<xsl:template match="cv:publicatie">
+        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+            <w:pPr>
+                <w:tabs>
+                    <w:tab w:val="right" w:pos="9070"/>
+                </w:tabs>
+            </w:pPr>
+            <w:r w:rsidRPr="00BE478D">
+                <w:rPr>
+                    <w:b/>
+                    <w:i/>
+                </w:rPr>
+                <w:t><xsl:value-of select="cv:titel" /></w:t>
+            </w:r>
+            <w:r w:rsidRPr="00BE478D">
+                <w:tab/>
+                <xsl:if test="cv:media">
+                    <w:t xml:space="preserve"><xsl:value-of select="cv:media" />, </w:t>
+                </xsl:if>
+                <w:t><xsl:value-of select="cv:jaar" /></w:t>
+            </w:r>
+            <w:r w:rsidRPr="00BE478D">
+                <w:br/>
+                <w:t><xsl:value-of select="cv:omschrijving" /></w:t>
+            </w:r>
+        </w:p>
 	</xsl:template>
 
 	<xsl:template match="cv:werkopdracht">

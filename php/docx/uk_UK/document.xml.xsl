@@ -706,7 +706,7 @@
 							<w:pStyle w:val="Heading2"/>
 						</w:pPr>
 						<w:r>
-							<w:t>Branche knowledge</w:t>
+							<w:t>Business sector knowledge</w:t>
 						</w:r>
 					</w:p>
 					<w:p w:rsidR="0091280F" w:rsidRDefault="0091280F" w:rsidP="0091280F">
@@ -1343,7 +1343,7 @@
             </w:r>
             <w:r w:rsidRPr="00BE478D">
                 <w:br/>
-                <w:t><xsl:value-of select="cv:omschrijving" /></w:t>
+                <w:t><xsl:value-of select="cv:omschrijving_uk_UK" /></w:t>
             </w:r>
         </w:p>
 	</xsl:template>

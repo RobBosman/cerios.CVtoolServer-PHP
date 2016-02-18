@@ -1343,7 +1343,7 @@
             </w:r>
             <w:r w:rsidRPr="00BE478D">
                 <w:br/>
-                <w:t><xsl:value-of select="cv:omschrijving" /></w:t>
+                <w:t><xsl:value-of select="cv:omschrijving_nl_NL" /></w:t>
             </w:r>
         </w:p>
 	</xsl:template>

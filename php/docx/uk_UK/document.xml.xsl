@@ -495,12 +495,12 @@
 				</xsl:if>
 				<!--
 				
-					ALGEMENE OPLEIDINGEN
+					OPLEIDING
 				
 				-->
-				<xsl:variable name="algemene-opleidingen"
+				<xsl:variable name="opleidingen"
 						select="//cv:opleiding[(not(cv:soort_opleiding) or (cv:soort_opleiding = 0)) and (normalize-space(cv:naam_opleiding | cv:naam_instituut))]" />
-				<xsl:if test="$algemene-opleidingen">
+				<xsl:if test="$opleidingen">
 					<w:p w:rsidR="003B5042" w:rsidRDefault="003B5042" w:rsidP="003B5042">
 						<w:pPr>
 							<w:pStyle w:val="Heading2"/>
@@ -534,7 +534,7 @@
 							<w:gridCol w:w="3226"/>
 							<w:gridCol w:w="1318"/>
 						</w:tblGrid>
-						<xsl:apply-templates select="$algemene-opleidingen" mode="algemene-opleiding">
+						<xsl:apply-templates select="$opleidingen" mode="opleiding">
 							<xsl:sort select="cv:jaar_diploma" data-type="number" order="descending" />
 							<xsl:sort select="cv:diploma" data-type="number" />
 						</xsl:apply-templates>
@@ -542,18 +542,18 @@
 				</xsl:if>
 				<!--
 				
-					VAKTECHNISCHE OPLEIDINGEN
+					TRAINING VAKTECHNISCH
 				
 				-->
-				<xsl:variable name="vaktechnische-opleidingen"
+				<xsl:variable name="training-vaktechnisch"
 						select="//cv:opleiding[(cv:soort_opleiding = 1) and (normalize-space(cv:naam_opleiding | cv:naam_instituut))]" />
-				<xsl:if test="$vaktechnische-opleidingen">
+				<xsl:if test="$training-vaktechnisch">
 					<w:p w:rsidR="003B5042" w:rsidRDefault="003B5042" w:rsidP="003B5042">
 						<w:pPr>
 							<w:pStyle w:val="Heading2"/>
 						</w:pPr>
 						<w:r>
-							<w:t>Education</w:t>
+							<w:t>Training specific</w:t>
 						</w:r>
 					</w:p>
 					<w:tbl>
@@ -580,7 +580,53 @@
 							<w:gridCol w:w="5490"/>
 							<w:gridCol w:w="1318"/>
 						</w:tblGrid>
-						<xsl:apply-templates select="$vaktechnische-opleidingen" mode="vaktechnische-opleiding">
+						<xsl:apply-templates select="$training-vaktechnisch" mode="training">
+							<xsl:sort select="cv:jaar_diploma" data-type="number" order="descending" />
+							<xsl:sort select="cv:diploma" data-type="number" />
+						</xsl:apply-templates>
+					</w:tbl>
+				</xsl:if>
+				<!--
+				
+					TRAINING VAKTECHNISCH
+				
+				-->
+				<xsl:variable name="training-algemeen"
+						select="//cv:opleiding[(cv:soort_opleiding = 2) and (normalize-space(cv:naam_opleiding | cv:naam_instituut))]" />
+				<xsl:if test="$training-algemeen">
+					<w:p w:rsidR="003B5042" w:rsidRDefault="003B5042" w:rsidP="003B5042">
+						<w:pPr>
+							<w:pStyle w:val="Heading2"/>
+						</w:pPr>
+						<w:r>
+							<w:t>Training general</w:t>
+						</w:r>
+					</w:p>
+					<w:tbl>
+						<w:tblPr>
+							<w:tblW w:w="9072" w:type="dxa"/>
+							<w:tblInd w:w="60" w:type="dxa"/>
+							<w:tblBorders>
+								<w:top w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+								<w:left w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+								<w:bottom w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+								<w:right w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+								<w:insideH w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+								<w:insideV w:val="single" w:sz="2" w:space="0" w:color="231F20"/>
+							</w:tblBorders>
+							<w:tblLayout w:type="fixed"/>
+							<w:tblCellMar>
+								<w:left w:w="60" w:type="dxa"/>
+								<w:right w:w="60" w:type="dxa"/>
+							</w:tblCellMar>
+							<w:tblLook w:val="01E0" w:firstRow="1" w:lastRow="1" w:firstColumn="1" w:lastColumn="1" w:noHBand="0" w:noVBand="0"/>
+						</w:tblPr>
+						<w:tblGrid>
+							<w:gridCol w:w="2264"/>
+							<w:gridCol w:w="5490"/>
+							<w:gridCol w:w="1318"/>
+						</w:tblGrid>
+						<xsl:apply-templates select="$training-algemeen" mode="training">
 							<xsl:sort select="cv:jaar_diploma" data-type="number" order="descending" />
 							<xsl:sort select="cv:diploma" data-type="number" />
 						</xsl:apply-templates>
@@ -1003,7 +1049,7 @@
 	</xsl:template>
 
 
-	<xsl:template match="cv:opleiding" mode="algemene-opleiding">
+	<xsl:template match="cv:opleiding" mode="opleiding">
 		<xsl:variable name="table-style">
 			<xsl:choose>
 				<xsl:when test="position() != last()">Tabelregel</xsl:when>
@@ -1080,7 +1126,7 @@
 		</w:tr>
 	</xsl:template>
 
-	<xsl:template match="cv:opleiding" mode="vaktechnische-opleiding">
+	<xsl:template match="cv:opleiding" mode="training">
 		<xsl:variable name="table-style">
 			<xsl:choose>
 				<xsl:when test="position() != last()">Tabelregel</xsl:when>

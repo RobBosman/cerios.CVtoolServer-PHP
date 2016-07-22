@@ -1452,7 +1452,7 @@
 								</w:rPr>
 								<w:t>
 									<xsl:choose>
-										<xsl:when test="cv:titel">Title</xsl:when>
+										<xsl:when test="cv:titel">Assignment</xsl:when>
 										<xsl:otherwise>Period</xsl:otherwise>
 									</xsl:choose>
 								</w:t>

@@ -1003,370 +1003,392 @@
 				
 					WERKERVARING
 				
-				-->
-				<xsl:variable name="werkopdrachten"
-						select="//cv:werkopdracht[(cv:opnemen_in_cv = 1) and (normalize-space(cv:opdrachtgever))]" />
-				<!-- Sorteer op 'sort_index' als die is gedefinieerd, anders op 'periode_eind'. -->
-				<xsl:choose>
-					<xsl:when test="$werkopdrachten[normalize-space(cv:sort_index) != '']">
-						<xsl:apply-templates select="$werkopdrachten">
-							<xsl:sort select="cv:sort_index" data-type="number" />
-						</xsl:apply-templates>
-					</xsl:when>
-					<xsl:otherwise>
-						<!-- Eerst de werkopdrachten die tot 'heden' lopen... -->
-						<xsl:apply-templates select="$werkopdrachten[not(cv:periode_eind)]" />
-						<!-- ...en dan de rest. -->
-						<xsl:apply-templates select="$werkopdrachten[cv:periode_eind]">
-							<xsl:sort select="cv:periode_eind" order="descending" />
-							<xsl:sort select="cv:sort_index" data-type="number" />
-						</xsl:apply-templates>
-					</xsl:otherwise>
-				</xsl:choose>
-				<w:p w:rsidR="00A47DC9" w:rsidRPr="00C3613C" w:rsidRDefault="00A47DC9" w:rsidP="00356BC5">
-					<w:pPr>
-						<w:rPr>
-							<w:szCs w:val="20"/>
-						</w:rPr>
-					</w:pPr>
-				</w:p>
-				<w:sectPr w:rsidR="00A47DC9" w:rsidRPr="00C3613C" w:rsidSect="00D97F86">
-					<w:headerReference w:type="default" r:id="rId10"/>
-					<w:footerReference w:type="default" r:id="rId11"/>
-					<xsl:if test="($layout = '') or not(//cv:visitekaartje)">
-						<w:headerReference w:type="first" r:id="rId10"/>
-					</xsl:if>
-					<w:footerReference w:type="first" r:id="rId11"/>
-					<w:type w:val="continuous"/>
-					<w:pgSz w:w="11906" w:h="16838"/>
-					<w:pgMar w:top="1985" w:right="1418" w:bottom="1418" w:left="1418" w:header="567" w:footer="709" w:gutter="0"/>
-					<w:cols w:space="708"/>
-					<w:titlePg/>
-					<w:docGrid w:linePitch="360"/>
-				</w:sectPr>
-			</w:body>
-		</w:document>
-	</xsl:template>
+                -->
+                <xsl:variable name="werkopdrachten" select="//cv:werkopdracht[(cv:opnemen_in_cv = 1)
+                        and (normalize-space(cv:werkgever) or normalize-space(cv:opdrachtgever))]" />
+                <!-- Sorteer op 'sort_index' als die is gedefinieerd, anders op 'periode_eind'. -->
+                <xsl:choose>
+                    <xsl:when test="$werkopdrachten[normalize-space(cv:sort_index) != '']">
+                        <xsl:apply-templates select="$werkopdrachten">
+                            <xsl:sort select="cv:sort_index" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <!-- Eerst de werkopdrachten die tot 'heden' lopen... -->
+                        <xsl:apply-templates select="$werkopdrachten[not(cv:periode_eind)]" />
+                        <!-- ...en dan de rest. -->
+                        <xsl:apply-templates select="$werkopdrachten[cv:periode_eind]">
+                            <xsl:sort select="cv:periode_eind" order="descending" />
+                            <xsl:sort select="cv:sort_index" data-type="number" />
+                        </xsl:apply-templates>
+                    </xsl:otherwise>
+                </xsl:choose>
+                <w:p w:rsidR="00A47DC9" w:rsidRPr="00C3613C" w:rsidRDefault="00A47DC9" w:rsidP="00356BC5">
+                    <w:pPr>
+                        <w:rPr>
+                            <w:szCs w:val="20"/>
+                        </w:rPr>
+                    </w:pPr>
+                </w:p>
+                <w:sectPr w:rsidR="00A47DC9" w:rsidRPr="00C3613C" w:rsidSect="00D97F86">
+                    <w:headerReference w:type="default" r:id="rId10"/>
+                    <w:footerReference w:type="default" r:id="rId11"/>
+                    <xsl:if test="($layout = '') or not(//cv:visitekaartje)">
+                        <w:headerReference w:type="first" r:id="rId10"/>
+                    </xsl:if>
+                    <w:footerReference w:type="first" r:id="rId11"/>
+                    <w:type w:val="continuous"/>
+                    <w:pgSz w:w="11906" w:h="16838"/>
+                    <w:pgMar w:top="1985" w:right="1418" w:bottom="1418" w:left="1418" w:header="567" w:footer="709" w:gutter="0"/>
+                    <w:cols w:space="708"/>
+                    <w:titlePg/>
+                    <w:docGrid w:linePitch="360"/>
+                </w:sectPr>
+            </w:body>
+        </w:document>
+    </xsl:template>
 
 
-	<xsl:template match="cv:opleiding" mode="opleiding">
-		<xsl:variable name="table-style">
-			<xsl:choose>
-				<xsl:when test="position() != last()">Tabelregel</xsl:when>
-				<xsl:otherwise>Tabelregellaatste</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<w:tr w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2264" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:naam_instituut" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2264" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:plaats_instituut" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="3226" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:naam_opleiding" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="1318" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t>
-							<xsl:if test="cv:jaar_diploma">
-								<xsl:value-of select="cv:jaar_diploma" />
-								<xsl:if test="cv:diploma = 1">
-									<xsl:text>, </xsl:text>
-								</xsl:if>
-							</xsl:if>
-							<xsl:if test="cv:diploma = 1">
-								<xsl:text>diploma</xsl:text>
-							</xsl:if>
-						</w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:opleiding" mode="opleiding">
+        <xsl:variable name="table-style">
+            <xsl:choose>
+                <xsl:when test="position() != last()">Tabelregel</xsl:when>
+                <xsl:otherwise>Tabelregellaatste</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <w:tr w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2264" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:naam_instituut" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2264" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:plaats_instituut" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="3226" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:naam_opleiding" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="1318" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:if test="cv:jaar_diploma">
+                                <xsl:value-of select="cv:jaar_diploma" />
+                                <xsl:if test="cv:diploma = 1">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
+                            </xsl:if>
+                            <xsl:if test="cv:diploma = 1">
+                                <xsl:text>diploma</xsl:text>
+                            </xsl:if>
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
 
-	<xsl:template match="cv:opleiding" mode="training">
-		<xsl:variable name="table-style">
-			<xsl:choose>
-				<xsl:when test="position() != last()">Tabelregel</xsl:when>
-				<xsl:otherwise>Tabelregellaatste</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<w:tr w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2264" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:naam_instituut" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="5490" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:naam_opleiding" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="1318" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t>
-							<xsl:if test="cv:jaar_diploma">
-								<xsl:value-of select="cv:jaar_diploma" />
-								<xsl:if test="cv:diploma = 1">
-									<xsl:text>, </xsl:text>
-								</xsl:if>
-							</xsl:if>
-							<xsl:if test="cv:diploma = 1">
-								<xsl:text>diploma</xsl:text>
-							</xsl:if>
-						</w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:opleiding" mode="training">
+        <xsl:variable name="table-style">
+            <xsl:choose>
+                <xsl:when test="position() != last()">Tabelregel</xsl:when>
+                <xsl:otherwise>Tabelregellaatste</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <w:tr w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2264" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:naam_instituut" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="5490" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:naam_opleiding" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="1318" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:if test="cv:jaar_diploma">
+                                <xsl:value-of select="cv:jaar_diploma" />
+                                <xsl:if test="cv:diploma = 1">
+                                    <xsl:text>, </xsl:text>
+                                </xsl:if>
+                            </xsl:if>
+                            <xsl:if test="cv:diploma = 1">
+                                <xsl:text>diploma</xsl:text>
+                            </xsl:if>
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
 
-	<xsl:template match="cv:talenkennis">
-		<xsl:variable name="table-style">
-			<xsl:choose>
-				<xsl:when test="position() != last()">Tabelregel</xsl:when>
-				<xsl:otherwise>Tabelregellaatste</xsl:otherwise>
-			</xsl:choose>
-		</xsl:variable>
-		<w:tr w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2268" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:taal" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2268" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:apply-templates select="cv:mondeling" mode="linguistics-level" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="2268" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:apply-templates select="cv:schriftelijk" mode="linguistics-level" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:talenkennis">
+        <xsl:variable name="table-style">
+            <xsl:choose>
+                <xsl:when test="position() != last()">Tabelregel</xsl:when>
+                <xsl:otherwise>Tabelregellaatste</xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>
+        <w:tr w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidTr="00CC5388">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2268" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:taal" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2268" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:apply-templates select="cv:mondeling" mode="linguistics-level" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="2268" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="003B5042" w:rsidRPr="00A731A7" w:rsidRDefault="00414A1D" w:rsidP="00CC5388">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:apply-templates select="cv:schriftelijk" mode="linguistics-level" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
 
-	<xsl:template match="cv:branchekennis" mode="last">
-		<xsl:apply-templates select=".">
-			<xsl:with-param name="table-style">Tabelregellaatste</xsl:with-param>
-		</xsl:apply-templates>
-	</xsl:template>
+    <xsl:template match="cv:branchekennis" mode="last">
+        <xsl:apply-templates select=".">
+            <xsl:with-param name="table-style">Tabelregellaatste</xsl:with-param>
+        </xsl:apply-templates>
+    </xsl:template>
 
-	<xsl:template match="cv:branchekennis">
-		<xsl:param name="table-style">Tabelregel</xsl:param>
-		<w:tr w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="3544" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidRDefault="00011166" w:rsidP="00C90161">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r>
-						<w:t><xsl:value-of select="cv:omschrijving_UK" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="822" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidRDefault="00011166" w:rsidP="00C90161">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<xsl:call-template name="skill-level">
-						<xsl:with-param name="level" select="cv:kennisniveau" />
-					</xsl:call-template>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:branchekennis">
+        <xsl:param name="table-style">Tabelregel</xsl:param>
+        <w:tr w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="3544" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidRDefault="00011166" w:rsidP="00C90161">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r>
+                        <w:t>
+                            <xsl:value-of select="cv:omschrijving_UK" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="822" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00011166" w:rsidRPr="00A731A7" w:rsidRDefault="00011166" w:rsidP="00C90161">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <xsl:call-template name="skill-level">
+                        <xsl:with-param name="level" select="cv:kennisniveau" />
+                    </xsl:call-template>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
 
-	<xsl:template match="cv:vaardigheid/cv:categorie">
-		<w:tr w:rsidR="00480FB7" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="3544" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00480FB7" w:rsidRPr="00D62DBF" w:rsidRDefault="00480FB7" w:rsidP="00D62DBF">
-					<w:pPr>
-						<w:pStyle w:val="Tabelregel"/>
-						<w:rPr>
-							<w:b/>
-						</w:rPr>
-					</w:pPr>
-					<w:r w:rsidRPr="00D62DBF">
-						<w:rPr>
-							<w:b/>
-						</w:rPr>
-						<w:t><xsl:apply-templates select="." mode="skill-category" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="822" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00480FB7" w:rsidRPr="00D62DBF" w:rsidRDefault="00480FB7" w:rsidP="00D62DBF">
-					<w:pPr>
-						<w:pStyle w:val="Tabelregel"/>
-					</w:pPr>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:vaardigheid/cv:categorie">
+        <w:tr w:rsidR="00480FB7" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="3544" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00480FB7" w:rsidRPr="00D62DBF" w:rsidRDefault="00480FB7" w:rsidP="00D62DBF">
+                    <w:pPr>
+                        <w:pStyle w:val="Tabelregel"/>
+                        <w:rPr>
+                            <w:b/>
+                        </w:rPr>
+                    </w:pPr>
+                    <w:r w:rsidRPr="00D62DBF">
+                        <w:rPr>
+                            <w:b/>
+                        </w:rPr>
+                        <w:t>
+                            <xsl:apply-templates select="." mode="skill-category" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="822" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00480FB7" w:rsidRPr="00D62DBF" w:rsidRDefault="00480FB7" w:rsidP="00D62DBF">
+                    <w:pPr>
+                        <w:pStyle w:val="Tabelregel"/>
+                    </w:pPr>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
 
-	<xsl:template match="cv:vaardigheid" mode="last">
-		<xsl:apply-templates select=".">
-			<xsl:with-param name="table-style">Tabelregellaatste</xsl:with-param>
-		</xsl:apply-templates>
-	</xsl:template>
+    <xsl:template match="cv:vaardigheid" mode="last">
+        <xsl:apply-templates select=".">
+            <xsl:with-param name="table-style">Tabelregellaatste</xsl:with-param>
+        </xsl:apply-templates>
+    </xsl:template>
 
-	<xsl:template match="cv:vaardigheid">
-		<xsl:param name="table-style">Tabelregel</xsl:param>
-		<w:tr w:rsidR="00D62DBF" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
-			<w:trPr>
-				<w:cantSplit/>
-				<w:trHeight w:val="20"/>
-			</w:trPr>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="3544" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00D62DBF" w:rsidRPr="00D62DBF" w:rsidRDefault="00D62DBF" w:rsidP="00D62DBF">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<w:r w:rsidRPr="00D62DBF">
-						<w:t><xsl:value-of select="cv:omschrijving" /></w:t>
-					</w:r>
-				</w:p>
-			</w:tc>
-			<w:tc>
-				<w:tcPr>
-					<w:tcW w:w="822" w:type="dxa"/>
-				</w:tcPr>
-				<w:p w:rsidR="00D62DBF" w:rsidRPr="00A731A7" w:rsidRDefault="00D62DBF" w:rsidP="00C90161">
-					<w:pPr>
-						<w:pStyle w:val="{$table-style}"/>
-					</w:pPr>
-					<xsl:call-template name="skill-level">
-						<xsl:with-param name="level" select="cv:kennisniveau" />
-					</xsl:call-template>
-				</w:p>
-			</w:tc>
-		</w:tr>
-	</xsl:template>
+    <xsl:template match="cv:vaardigheid">
+        <xsl:param name="table-style">Tabelregel</xsl:param>
+        <w:tr w:rsidR="00D62DBF" w:rsidRPr="00A731A7" w:rsidTr="00C90161">
+            <w:trPr>
+                <w:cantSplit/>
+                <w:trHeight w:val="20"/>
+            </w:trPr>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="3544" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00D62DBF" w:rsidRPr="00D62DBF" w:rsidRDefault="00D62DBF" w:rsidP="00D62DBF">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <w:r w:rsidRPr="00D62DBF">
+                        <w:t>
+                            <xsl:value-of select="cv:omschrijving" />
+                        </w:t>
+                    </w:r>
+                </w:p>
+            </w:tc>
+            <w:tc>
+                <w:tcPr>
+                    <w:tcW w:w="822" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00D62DBF" w:rsidRPr="00A731A7" w:rsidRDefault="00D62DBF" w:rsidP="00C90161">
+                    <w:pPr>
+                        <w:pStyle w:val="{$table-style}"/>
+                    </w:pPr>
+                    <xsl:call-template name="skill-level">
+                        <xsl:with-param name="level" select="cv:kennisniveau" />
+                    </xsl:call-template>
+                </w:p>
+            </w:tc>
+        </w:tr>
+    </xsl:template>
     
-	<xsl:template match="cv:publicatie">
+    <xsl:template match="cv:publicatie">
         <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
             <w:pPr>
                 <w:tabs>
@@ -1378,285 +1400,316 @@
                     <w:b/>
                     <w:i/>
                 </w:rPr>
-                <w:t><xsl:value-of select="cv:titel" /></w:t>
+                <w:t>
+                    <xsl:value-of select="cv:titel" />
+                </w:t>
             </w:r>
             <w:r w:rsidRPr="00BE478D">
                 <w:tab/>
                 <xsl:if test="cv:media">
                     <w:t xml:space="preserve"><xsl:value-of select="cv:media" />, </w:t>
                 </xsl:if>
-                <w:t><xsl:value-of select="cv:jaar" /></w:t>
+                <w:t>
+                    <xsl:value-of select="cv:jaar" />
+                </w:t>
             </w:r>
             <w:r w:rsidRPr="00BE478D">
                 <w:br/>
-                <w:t><xsl:value-of select="cv:omschrijving_uk_UK" /></w:t>
+                <w:t>
+                    <xsl:value-of select="cv:omschrijving_uk_UK" />
+                </w:t>
             </w:r>
         </w:p>
-	</xsl:template>
+    </xsl:template>
 
-	<xsl:template match="cv:werkopdracht">
-		<xsl:variable name="werkervaring" select="cv:werkervaring[cv:locale = $locale]" />
-		<w:p w:rsidR="00480FB7" w:rsidRDefault="00480FB7" w:rsidP="00480FB7">
-			<w:pPr>
-				<w:pStyle w:val="Heading2"/>
-			</w:pPr>
-			<w:r>
-				<w:t>Client</w:t>
-				<w:tab/>
-				<w:t>
-					<xsl:value-of select="cv:opdrachtgever" />
-				</w:t>
-			</w:r>
-		</w:p>
-		<w:tbl>
-			<w:tblPr>
-				<w:tblW w:w="9072" w:type="dxa"/>
-				<w:tblCellMar>
-					<w:left w:w="0" w:type="dxa"/>
-					<w:right w:w="0" w:type="dxa"/>
-				</w:tblCellMar>
-				<w:tblLook w:val="01E0" w:firstRow="1" w:lastRow="1" w:firstColumn="1" w:lastColumn="1" w:noHBand="0" w:noVBand="0"/>
-			</w:tblPr>
-			<w:tblGrid>
-				<w:gridCol w:w="2268"/>
-				<w:gridCol w:w="4313"/>
-				<w:gridCol w:w="2491"/>
-			</w:tblGrid>
-			<xsl:variable name="periodeTekst">
-				<xsl:apply-templates select="cv:periode_begin" mode="date-month-year" />
-				<xsl:text> - </xsl:text>
-				<xsl:choose>
-					<xsl:when test="cv:periode_eind">
-						<xsl:apply-templates select="cv:periode_eind" mode="date-month-year" />
-					</xsl:when>
-					<xsl:otherwise>up till now</xsl:otherwise>
-				</xsl:choose>
-			</xsl:variable>
-			<xsl:if test="(normalize-space(cv:titel)) or (normalize-space($werkervaring/cv:rol) = '')">
-				<w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2268" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:keepNext/>
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-							</w:pPr>
-							<w:r w:rsidRPr="003C6056">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>
-									<xsl:choose>
-										<xsl:when test="cv:titel">Assignment</xsl:when>
-										<xsl:otherwise>Period</xsl:otherwise>
-									</xsl:choose>
-								</w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="4313" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:keepNext/>
-							</w:pPr>
-							<xsl:apply-templates select="cv:titel" mode="format-text" />
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2491" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:keepNext/>
-                                                                <w:jc w:val="right"/>
-							</w:pPr>
-							<w:r>
-								<w:t><xsl:value-of select="$periodeTekst"/></w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-				</w:tr>
-			</xsl:if>
-			<xsl:if test="normalize-space($werkervaring/cv:rol)">
-				<w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2268" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:keepNext/>
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-							</w:pPr>
-							<w:r w:rsidRPr="003C6056">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>Position</w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<xsl:choose>
-								<xsl:when test="normalize-space(cv:titel) = ''">
-									<w:tcW w:w="4313" w:type="dxa"/>
-								</xsl:when>
-								<xsl:otherwise>
-									<w:tcW w:w="7006" w:type="dxa"/>
-									<w:gridSpan w:val="2"/>
-								</xsl:otherwise>
-							</xsl:choose>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:keepNext/>
-							</w:pPr>
-							<w:r>
-								<w:t><xsl:value-of select="$werkervaring/cv:rol" /></w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<xsl:if test="(normalize-space(cv:titel) = '')">
-						<w:tc>
-							<w:tcPr>
-								<w:tcW w:w="2491" w:type="dxa"/>
-							</w:tcPr>
-							<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-								<w:pPr>
-									<w:pStyle w:val="Tabeltekst"/>
-									<w:keepNext/>
-                                        	                        <w:jc w:val="right"/>
-								</w:pPr>
-								<w:r>
-									<w:t><xsl:value-of select="$periodeTekst"/></w:t>
-								</w:r>
-							</w:p>
-						</w:tc>
-					</xsl:if>
-                                </w:tr>
-			</xsl:if>
-			<xsl:if test="normalize-space($werkervaring/cv:opdrachtformulering)">
-				<w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2268" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-							</w:pPr>
-							<w:r w:rsidRPr="003C6056">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>Job description</w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="7006" w:type="dxa"/>
-							<w:gridSpan w:val="2"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekst"/>
-							</w:pPr>
-							<xsl:apply-templates select="$werkervaring/cv:opdrachtformulering" mode="format-text" />
-						</w:p>
-					</w:tc>
-				</w:tr>
-			</xsl:if>
-			<xsl:if test="normalize-space($werkervaring/cv:werkzaamheden)">
-				<w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2268" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00366729" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekstlaatste"/>
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-							</w:pPr>
-							<w:r w:rsidRPr="003C6056">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>Activities and results</w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="7006" w:type="dxa"/>
-							<w:gridSpan w:val="2"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekstlaatste"/>
-							</w:pPr>
-							<xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
-						</w:p>
-					</w:tc>
-				</w:tr>
-			</xsl:if>
-			<xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
-				<w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="2268" w:type="dxa"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00366729" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekstlaatste"/>
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-							</w:pPr>
-							<w:r w:rsidRPr="003C6056">
-								<w:rPr>
-									<w:b/>
-								</w:rPr>
-								<w:t>Keywords</w:t>
-							</w:r>
-						</w:p>
-					</w:tc>
-					<w:tc>
-						<w:tcPr>
-							<w:tcW w:w="7006" w:type="dxa"/>
-							<w:gridSpan w:val="2"/>
-						</w:tcPr>
-						<w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
-							<w:pPr>
-								<w:pStyle w:val="Tabeltekstlaatste"/>
-							</w:pPr>
-							<xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
-						</w:p>
-					</w:tc>
-				</w:tr>
-			</xsl:if>
-		</w:tbl>
-	</xsl:template>
+    <xsl:template match="cv:werkopdracht">
+        <xsl:variable name="werkervaring" select="cv:werkervaring[cv:locale = $locale]" />
+        <w:p w:rsidR="00480FB7" w:rsidRDefault="00480FB7" w:rsidP="00480FB7">
+            <w:pPr>
+                <w:pStyle w:val="Heading2"/>
+                <w:tabs>
+                    <w:tab w:val="right" w:pos="9070"/>
+                </w:tabs>
+            </w:pPr>
+            <w:r>
+                <xsl:choose>
+                    <xsl:when test="normalize-space(cv:werkgever) and (normalize-space(cv:opdrachtgever) = ''
+                            or normalize-space(cv:opdrachtgever) = normalize-space(cv:werkgever))">
+                        <w:t>Employer</w:t>
+                        <w:tab/>
+                        <w:t><xsl:value-of select="cv:werkgever" /></w:t>
+                    </xsl:when>
+                    <xsl:when test="normalize-space(cv:werkgever) and (normalize-space(cv:opdrachtgever)
+                            or normalize-space(cv:opdrachtgever) != normalize-space(cv:werkgever))">
+                        <w:t>Client</w:t>
+                        <w:tab/>
+                        <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+                        <w:tab/>
+                        <w:t>(<xsl:value-of select="cv:werkgever" />)</w:t>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <w:t>Client</w:t>
+                        <w:tab/>
+                        <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+                    </xsl:otherwise>
+                </xsl:choose>
+            </w:r>
+        </w:p>
+        <w:tbl>
+            <w:tblPr>
+                <w:tblW w:w="9072" w:type="dxa"/>
+                <w:tblCellMar>
+                    <w:left w:w="0" w:type="dxa"/>
+                    <w:right w:w="0" w:type="dxa"/>
+                </w:tblCellMar>
+                <w:tblLook w:val="01E0" w:firstRow="1" w:lastRow="1" w:firstColumn="1" w:lastColumn="1" w:noHBand="0" w:noVBand="0"/>
+            </w:tblPr>
+            <w:tblGrid>
+                <w:gridCol w:w="2268"/>
+                <w:gridCol w:w="4313"/>
+                <w:gridCol w:w="2491"/>
+            </w:tblGrid>
+            <xsl:variable name="periodeTekst">
+                <xsl:apply-templates select="cv:periode_begin" mode="date-month-year" />
+                <xsl:text> - </xsl:text>
+                <xsl:choose>
+                    <xsl:when test="cv:periode_eind">
+                        <xsl:apply-templates select="cv:periode_eind" mode="date-month-year" />
+                    </xsl:when>
+                    <xsl:otherwise>up till now</xsl:otherwise>
+                </xsl:choose>
+            </xsl:variable>
+            <xsl:if test="(normalize-space(cv:titel)) or (normalize-space($werkervaring/cv:rol) = '')">
+                <w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2268" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:keepNext/>
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="003C6056">
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                                <w:t>
+                                    <xsl:choose>
+                                        <xsl:when test="cv:titel">Assignment</xsl:when>
+                                        <xsl:otherwise>Period</xsl:otherwise>
+                                    </xsl:choose>
+                                </w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="4313" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:keepNext/>
+                            </w:pPr>
+                            <xsl:apply-templates select="cv:titel" mode="format-text" />
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2491" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:keepNext/>
+                                <w:jc w:val="right"/>
+                            </w:pPr>
+                            <w:r>
+                                <w:t>
+                                    <xsl:value-of select="$periodeTekst"/>
+                                </w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                </w:tr>
+            </xsl:if>
+            <xsl:if test="normalize-space($werkervaring/cv:rol)">
+                <w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2268" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:keepNext/>
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="003C6056">
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                                <w:t>Position</w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <xsl:choose>
+                                <xsl:when test="normalize-space(cv:titel) = ''">
+                                    <w:tcW w:w="4313" w:type="dxa"/>
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <w:tcW w:w="7006" w:type="dxa"/>
+                                    <w:gridSpan w:val="2"/>
+                                </xsl:otherwise>
+                            </xsl:choose>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:keepNext/>
+                            </w:pPr>
+                            <w:r>
+                                <w:t>
+                                    <xsl:value-of select="$werkervaring/cv:rol" />
+                                </w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <xsl:if test="(normalize-space(cv:titel) = '')">
+                        <w:tc>
+                            <w:tcPr>
+                                <w:tcW w:w="2491" w:type="dxa"/>
+                            </w:tcPr>
+                            <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                                <w:pPr>
+                                    <w:pStyle w:val="Tabeltekst"/>
+                                    <w:keepNext/>
+                                    <w:jc w:val="right"/>
+                                </w:pPr>
+                                <w:r>
+                                    <w:t>
+                                        <xsl:value-of select="$periodeTekst"/>
+                                    </w:t>
+                                </w:r>
+                            </w:p>
+                        </w:tc>
+                    </xsl:if>
+                </w:tr>
+            </xsl:if>
+            <xsl:if test="normalize-space($werkervaring/cv:opdrachtformulering)">
+                <w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2268" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="003C6056" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="003C6056">
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                                <w:t>Job description</w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="7006" w:type="dxa"/>
+                            <w:gridSpan w:val="2"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekst"/>
+                            </w:pPr>
+                            <xsl:apply-templates select="$werkervaring/cv:opdrachtformulering" mode="format-text" />
+                        </w:p>
+                    </w:tc>
+                </w:tr>
+            </xsl:if>
+            <xsl:if test="normalize-space($werkervaring/cv:werkzaamheden)">
+                <w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2268" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00366729" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekstlaatste"/>
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="003C6056">
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                                <w:t>Activities and results</w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="7006" w:type="dxa"/>
+                            <w:gridSpan w:val="2"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekstlaatste"/>
+                            </w:pPr>
+                            <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
+                        </w:p>
+                    </w:tc>
+                </w:tr>
+            </xsl:if>
+            <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
+                <w:tr w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidTr="00C90161">
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="2268" w:type="dxa"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00366729" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekstlaatste"/>
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="003C6056">
+                                <w:rPr>
+                                    <w:b/>
+                                </w:rPr>
+                                <w:t>Keywords</w:t>
+                            </w:r>
+                        </w:p>
+                    </w:tc>
+                    <w:tc>
+                        <w:tcPr>
+                            <w:tcW w:w="7006" w:type="dxa"/>
+                            <w:gridSpan w:val="2"/>
+                        </w:tcPr>
+                        <w:p w:rsidR="00480FB7" w:rsidRPr="00A579DF" w:rsidRDefault="00480FB7" w:rsidP="00C90161">
+                            <w:pPr>
+                                <w:pStyle w:val="Tabeltekstlaatste"/>
+                            </w:pPr>
+                            <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
+                        </w:p>
+                    </w:tc>
+                </w:tr>
+            </xsl:if>
+        </w:tbl>
+    </xsl:template>
 
 </xsl:stylesheet>

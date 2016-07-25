@@ -1222,7 +1222,7 @@
                     </w:pPr>
                     <w:r>
                         <w:t>
-                            <xsl:value-of select="cv:taal" />
+                            <xsl:value-of select="cv:taal_NL" />
                         </w:t>
                     </w:r>
                 </w:p>

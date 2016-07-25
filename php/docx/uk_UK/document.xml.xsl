@@ -1222,7 +1222,15 @@
                     </w:pPr>
                     <w:r>
                         <w:t>
-                            <xsl:value-of select="cv:taal" />
+                            <xsl:choose>
+                                <xsl:when test="cv:taal_UK">
+                                    <xsl:value-of select="cv:taal_UK" />
+                                </xsl:when>
+                                <xsl:otherwise>
+                                    <xsl:value-of select="cv:taal_NL" />
+                                </xsl:otherwise>
+                            </xsl:choose>
+                            
                         </w:t>
                     </w:r>
                 </w:p>

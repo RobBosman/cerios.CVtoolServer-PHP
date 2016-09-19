@@ -1093,7 +1093,7 @@
             </w:tc>
             <w:tc>
                 <w:tcPr>
-                    <w:tcW w:w="3226" w:type="dxa"/>
+                    <w:tcW w:w="2985" w:type="dxa"/>
                 </w:tcPr>
                 <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
                     <w:pPr>
@@ -1108,7 +1108,7 @@
             </w:tc>
             <w:tc>
                 <w:tcPr>
-                    <w:tcW w:w="1318" w:type="dxa"/>
+                    <w:tcW w:w="1559" w:type="dxa"/>
                 </w:tcPr>
                 <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
                     <w:pPr>
@@ -1118,12 +1118,15 @@
                         <w:t>
                             <xsl:if test="cv:jaar_diploma">
                                 <xsl:value-of select="cv:jaar_diploma" />
-                                <xsl:if test="cv:diploma = 1">
+                                <xsl:if test="cv:diploma = 1 or cv:diploma = 2">
                                     <xsl:text>, </xsl:text>
                                 </xsl:if>
                             </xsl:if>
                             <xsl:if test="cv:diploma = 1">
                                 <xsl:text>diploma</xsl:text>
+                            </xsl:if>
+                            <xsl:if test="cv:diploma = 2">
+                                <xsl:text>certificaat</xsl:text>
                             </xsl:if>
                         </w:t>
                     </w:r>
@@ -1161,7 +1164,7 @@
             </w:tc>
             <w:tc>
                 <w:tcPr>
-                    <w:tcW w:w="5490" w:type="dxa"/>
+                    <w:tcW w:w="5249" w:type="dxa"/>
                 </w:tcPr>
                 <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
                     <w:pPr>
@@ -1176,7 +1179,7 @@
             </w:tc>
             <w:tc>
                 <w:tcPr>
-                    <w:tcW w:w="1318" w:type="dxa"/>
+                    <w:tcW w:w="1559" w:type="dxa"/>
                 </w:tcPr>
                 <w:p w:rsidR="005D5566" w:rsidRPr="00A731A7" w:rsidRDefault="005D5566" w:rsidP="00937C58">
                     <w:pPr>
@@ -1186,12 +1189,15 @@
                         <w:t>
                             <xsl:if test="cv:jaar_diploma">
                                 <xsl:value-of select="cv:jaar_diploma" />
-                                <xsl:if test="cv:diploma = 1">
+                                <xsl:if test="cv:diploma = 1 or cv:diploma = 2">
                                     <xsl:text>, </xsl:text>
                                 </xsl:if>
                             </xsl:if>
                             <xsl:if test="cv:diploma = 1">
                                 <xsl:text>diploma</xsl:text>
+                            </xsl:if>
+                            <xsl:if test="cv:diploma = 2">
+                                <xsl:text>certificaat</xsl:text>
                             </xsl:if>
                         </w:t>
                     </w:r>

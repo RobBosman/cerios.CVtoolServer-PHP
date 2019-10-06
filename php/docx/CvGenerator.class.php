@@ -67,20 +67,13 @@ class CvGenerator {
         if (strlen($this->layout) > 0) {
             // Base64-decode images.
             $image1 = $this->xslTransform("image1.b64.xsl");
-            if (($image1 != NULL) && (strlen($image1) > 0)){
+            if (($image1 != NULL) && (strlen($image1) > 0)) {
                 $image1 = base64_decode($image1);
-            } else {
-                $image1 = NULL;
+                $docxComponents['word/media/image1.jpeg'] = $image1;
             }
-            $docxComponents['word/media/image1.jpeg'] = $image1;
-        } else {
-            // Remove images in 'plain' layout.
-            $docxComponents['word/media/image1.jpeg'] = NULL;
-            $docxComponents['word/media/image2.png'] = NULL;
-            $docxComponents['word/media/image3.jpeg'] = NULL;
         }
 
-        $this->contentFilename = $this->createTempZipFile($docxComponents, $this->getSourceFile("cv_template.docx"));
+        $this->contentFilename = $this->createTempZipFile($docxComponents, $this->getSourceFile("$this->layout/cv_template.docx"));
     }
 
     private function getXmlData($restTarget, $jwt) {
@@ -97,7 +90,7 @@ class CvGenerator {
 
     private function xslTransform($styleSheetFileName) {
         $xslDoc = new DOMDocument();
-        $xslDoc->load($this->getSourceFile("$this->locale/$styleSheetFileName"));
+        $xslDoc->load($this->getSourceFile("$this->layout/$this->locale/$styleSheetFileName"));
         $xsltProc = new XSLTProcessor();
         $xsltProc->importStylesheet($xslDoc);
         $xsltParams = array(
@@ -110,7 +103,7 @@ class CvGenerator {
 
     private function createTempZipFile(array &$docxComponents, $templateCvFilename) {
         // Copy the template document to a temporary file.
-        $zipFilename = tempnam('/tmp', 'cv_');
+        $zipFilename = @tempnam('/tmp', 'cv_');
         if (copy($templateCvFilename, $zipFilename) !== TRUE) {
             error_log("Cannot copy '$templateCvFilename' to '$zipFilename'.");
             exit("Cannot copy '$templateCvFilename' to '$zipFilename'.");

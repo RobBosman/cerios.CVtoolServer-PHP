@@ -29,9 +29,9 @@
         <xsl:choose>
           <xsl:when test="$level = '1'"></xsl:when>
           <xsl:when test="$level = '2'"></xsl:when>
-          <xsl:when test="$level = '3'"></xsl:when>
-          <xsl:when test="$level = '4'"></xsl:when>
-          <xsl:when test="$level = '5'"></xsl:when>
+          <xsl:when test="$level = '3'"></xsl:when>
+          <xsl:when test="$level = '4'"></xsl:when>
+          <xsl:when test="$level = '5'"></xsl:when>
         </xsl:choose>
       </w:t>
     </w:r>

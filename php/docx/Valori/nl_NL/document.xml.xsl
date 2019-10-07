@@ -38,189 +38,116 @@
               <w:noProof/>
               <w:lang w:eastAsia="nl-NL"/>
             </w:rPr>
-            <mc:AlternateContent>
-              <mc:Choice Requires="wps">
-                <w:drawing>
-                  <wp:anchor distT="45720" distB="45720" distL="114300" distR="114300" simplePos="0" relativeHeight="251659264" behindDoc="0" locked="0" layoutInCell="1" allowOverlap="1">
-                    <wp:simplePos x="0" y="0"/>
-                    <wp:positionH relativeFrom="margin">
-                      <wp:align>right</wp:align>
-                    </wp:positionH>
-                    <wp:positionV relativeFrom="paragraph">
-                      <wp:posOffset>-561995</wp:posOffset>
-                    </wp:positionV>
-                    <wp:extent cx="5934251" cy="561315"/>
-                    <wp:effectExtent l="0" t="0" r="9525" b="10795"/>
-                    <wp:wrapNone/>
-                    <wp:docPr id="217" name="Tekstvak 2"/>
-                    <wp:cNvGraphicFramePr>
-                      <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"/>
-                    </wp:cNvGraphicFramePr>
-                    <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
-                      <a:graphicData uri="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
-                        <wps:wsp>
-                          <wps:cNvSpPr txBox="1">
-                            <a:spLocks noChangeArrowheads="1"/>
-                          </wps:cNvSpPr>
-                          <wps:spPr bwMode="auto">
-                            <a:xfrm>
-                              <a:off x="0" y="0"/>
-                              <a:ext cx="5934251" cy="561315"/>
-                            </a:xfrm>
-                            <a:prstGeom prst="rect">
-                              <a:avLst/>
-                            </a:prstGeom>
-                            <a:noFill/>
-                            <a:ln w="9525">
-                              <a:noFill/>
-                              <a:miter lim="800000"/>
-                              <a:headEnd/>
-                              <a:tailEnd/>
-                            </a:ln>
-                          </wps:spPr>
-                          <wps:txbx>
-                            <w:txbxContent>
-                              <w:p w:rsidR="00C34A5E" w:rsidRPr="00C34A5E" w:rsidRDefault="00C34A5E" w:rsidP="00C34A5E">
-                                <w:pPr>
-                                  <w:pStyle w:val="Titel"/>
-                                </w:pPr>
-                                <w:r w:rsidRPr="00C34A5E">
-                                  <w:t><xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" /></w:t>
-                                </w:r>
-                              </w:p>
-                              <w:p w:rsidR="0041112D" w:rsidRPr="00057125" w:rsidRDefault="00C34A5E" w:rsidP="00057125">
-                                <w:pPr>
-                                  <w:pStyle w:val="Ondertitel"/>
-                                  <w:rPr>
-                                    <w:iCs/>
-                                    <w:color w:val="F4931E"/>
-                                    <w:szCs w:val="24"/>
-                                  </w:rPr>
-                                </w:pPr>
-                                <w:r w:rsidRPr="00057125">
-                                  <w:rPr>
-                                    <w:szCs w:val="24"/>
-                                  </w:rPr>
-                                  <w:t>[PROFIEL_TITEL]</w:t>
-                                </w:r>
-                                <w:r w:rsidRPr="002271D3">
-                                  <w:rPr>
-                                    <w:rStyle w:val="Valori-geel"/>
-                                  </w:rPr>
-                                  <w:t xml:space="preserve"> // </w:t>
-                                </w:r>
-                                <w:r w:rsidRPr="00057125">
-                                  <w:rPr>
-                                    <w:szCs w:val="24"/>
-                                  </w:rPr>
-                                  <w:t><xsl:apply-templates select="//cv:persoonsgegevens/cv:geboortedatum" mode="date-numeric" /></w:t>
-                                </w:r>
-                                <w:r w:rsidRPr="002271D3">
-                                  <w:rPr>
-                                    <w:rStyle w:val="Valori-geel"/>
-                                  </w:rPr>
-                                  <w:t xml:space="preserve"> // </w:t>
-                                </w:r>
-                                <w:r w:rsidRPr="00057125">
-                                  <w:rPr>
-                                    <w:szCs w:val="24"/>
-                                  </w:rPr>
-                                  <w:t><xsl:value-of select="//cv:persoonsgegevens/cv:woonplaats" /></w:t>
-                                </w:r>
-                                <w:r w:rsidRPr="002271D3">
-                                  <w:rPr>
-                                    <w:rStyle w:val="Valori-geel"/>
-                                  </w:rPr>
-                                  <w:t xml:space="preserve"> //</w:t>
-                                </w:r>
-                              </w:p>
-                            </w:txbxContent>
-                          </wps:txbx>
-                          <wps:bodyPr rot="0" vert="horz" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="t" anchorCtr="0">
-                            <a:noAutofit/>
-                          </wps:bodyPr>
-                        </wps:wsp>
-                      </a:graphicData>
-                    </a:graphic>
-                    <wp14:sizeRelH relativeFrom="margin">
-                      <wp14:pctWidth>0</wp14:pctWidth>
-                    </wp14:sizeRelH>
-                    <wp14:sizeRelV relativeFrom="margin">
-                      <wp14:pctHeight>0</wp14:pctHeight>
-                    </wp14:sizeRelV>
-                  </wp:anchor>
-                </w:drawing>
-              </mc:Choice>
-              <mc:Fallback>
-                <w:pict>
-                  <v:shapetype id="_x0000_t202" coordsize="21600,21600" o:spt="202" path="m,l,21600r21600,l21600,xe">
-                    <v:stroke joinstyle="miter"/>
-                    <v:path gradientshapeok="t" o:connecttype="rect"/>
-                  </v:shapetype>
-                  <v:shape id="Tekstvak 2" o:spid="_x0000_s1026" type="#_x0000_t202" style="position:absolute;margin-left:416.05pt;margin-top:-44.25pt;width:467.25pt;height:44.2pt;z-index:251659264;visibility:visible;mso-wrap-style:square;mso-width-percent:0;mso-height-percent:0;mso-wrap-distance-left:9pt;mso-wrap-distance-top:3.6pt;mso-wrap-distance-right:9pt;mso-wrap-distance-bottom:3.6pt;mso-position-horizontal:right;mso-position-horizontal-relative:margin;mso-position-vertical:absolute;mso-position-vertical-relative:text;mso-width-percent:0;mso-height-percent:0;mso-width-relative:margin;mso-height-relative:margin;v-text-anchor:top" o:gfxdata="UEsDBBQABgAIAAAAIQC2gziS/gAAAOEBAAATAAAAW0NvbnRlbnRfVHlwZXNdLnhtbJSRQU7DMBBF&#xA;90jcwfIWJU67QAgl6YK0S0CoHGBkTxKLZGx5TGhvj5O2G0SRWNoz/78nu9wcxkFMGNg6quQqL6RA&#xA;0s5Y6ir5vt9lD1JwBDIwOMJKHpHlpr69KfdHjyxSmriSfYz+USnWPY7AufNIadK6MEJMx9ApD/oD&#xA;OlTrorhX2lFEilmcO2RdNtjC5xDF9pCuTyYBB5bi6bQ4syoJ3g9WQ0ymaiLzg5KdCXlKLjvcW893&#xA;SUOqXwnz5DrgnHtJTxOsQfEKIT7DmDSUCaxw7Rqn8787ZsmRM9e2VmPeBN4uqYvTtW7jvijg9N/y&#xA;JsXecLq0q+WD6m8AAAD//wMAUEsDBBQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAAX3JlbHMvLnJl&#xA;bHOkkMFqwzAMhu+DvYPRfXGawxijTi+j0GvpHsDYimMaW0Yy2fr2M4PBMnrbUb/Q94l/f/hMi1qR&#xA;JVI2sOt6UJgd+ZiDgffL8ekFlFSbvV0oo4EbChzGx4f9GRdb25HMsYhqlCwG5lrLq9biZkxWOiqY&#xA;22YiTra2kYMu1l1tQD30/bPm3wwYN0x18gb45AdQl1tp5j/sFB2T0FQ7R0nTNEV3j6o9feQzro1i&#xA;OWA14Fm+Q8a1a8+Bvu/d/dMb2JY5uiPbhG/ktn4cqGU/er3pcvwCAAD//wMAUEsDBBQABgAIAAAA&#xA;IQAo/UNFBQIAAOQDAAAOAAAAZHJzL2Uyb0RvYy54bWysU8tu2zAQvBfoPxC817KUKk0E00GaNEWB&#xA;9AEk/QCaoizCJJclaUvu12dJ2Y7R3orqQKzE3dmd2dHiZjSa7KQPCiyj5WxOibQCWmXXjP58fnh3&#xA;RUmI3LZcg5WM7mWgN8u3bxaDa2QFPehWeoIgNjSDY7SP0TVFEUQvDQ8zcNLiZQfe8Iivfl20ng+I&#xA;bnRRzeeXxQC+dR6EDAG/3k+XdJnxu06K+L3rgoxEM4qzxXz6fK7SWSwXvFl77nolDmPwf5jCcGWx&#xA;6QnqnkdOtl79BWWU8BCgizMBpoCuU0JmDsimnP/B5qnnTmYuKE5wJ5nC/4MV33Y/PFEto1X5gRLL&#xA;DS7pWW5C3PENqZI+gwsNpj05TIzjRxhxz5lrcI8gNoFYuOu5Xctb72HoJW9xvjJVFmelE05IIKvh&#xA;K7TYhm8jZKCx8yaJh3IQRMc97U+7kWMkAj/W1xfvq7qkROBdfVlelHVuwZtjtfMhfpZgSAoY9bj7&#xA;jM53jyGmaXhzTEnNLDworfP+tSUDo9d1VeeCsxujItpTK8Po1Tw9k2ESyU+2zcWRKz3F2EDbA+tE&#xA;dKIcx9WIiUmKFbR75O9hsiH+Nhj04H9TMqAFGQ2/ttxLSvQXixomvx4DfwxWx4BbgaWMRkqm8C5m&#xA;X0/cblHbTmXar50Ps6GVshoH2yevnr/nrNefc/kCAAD//wMAUEsDBBQABgAIAAAAIQCExhL43QAA&#xA;AAYBAAAPAAAAZHJzL2Rvd25yZXYueG1sTI/NTsMwEITvSH0Haytxa53yU6UhTlUhOCEh0nDg6MTb&#xA;xGq8DrHbhrdnOZXbzs5q5tt8O7lenHEM1pOC1TIBgdR4Y6lV8Fm9LlIQIWoyuveECn4wwLaY3eQ6&#xA;M/5CJZ73sRUcQiHTCroYh0zK0HTodFj6AYm9gx+djizHVppRXzjc9fIuSdbSaUvc0OkBnztsjvuT&#xA;U7D7ovLFfr/XH+WhtFW1SehtfVTqdj7tnkBEnOL1GP7wGR0KZqr9iUwQvQJ+JCpYpOkjCLY39w88&#xA;1LxZgSxy+R+/+AUAAP//AwBQSwECLQAUAAYACAAAACEAtoM4kv4AAADhAQAAEwAAAAAAAAAAAAAA&#xA;AAAAAAAAW0NvbnRlbnRfVHlwZXNdLnhtbFBLAQItABQABgAIAAAAIQA4/SH/1gAAAJQBAAALAAAA&#xA;AAAAAAAAAAAAAC8BAABfcmVscy8ucmVsc1BLAQItABQABgAIAAAAIQAo/UNFBQIAAOQDAAAOAAAA&#xA;AAAAAAAAAAAAAC4CAABkcnMvZTJvRG9jLnhtbFBLAQItABQABgAIAAAAIQCExhL43QAAAAYBAAAP&#xA;AAAAAAAAAAAAAAAAAF8EAABkcnMvZG93bnJldi54bWxQSwUGAAAAAAQABADzAAAAaQUAAAAA&#xA;" filled="f" stroked="f">
-                    <v:textbox inset="0,0,0,0">
-                      <w:txbxContent>
-                        <w:p w:rsidR="00C34A5E" w:rsidRPr="00C34A5E" w:rsidRDefault="00C34A5E" w:rsidP="00C34A5E">
-                          <w:pPr>
-                            <w:pStyle w:val="Titel"/>
-                          </w:pPr>
-                          <w:r w:rsidRPr="00C34A5E">
-                            <w:t><xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" /></w:t>
-                          </w:r>
-                        </w:p>
-                        <w:p w:rsidR="0041112D" w:rsidRPr="00057125" w:rsidRDefault="00C34A5E" w:rsidP="00057125">
-                          <w:pPr>
-                            <w:pStyle w:val="Ondertitel"/>
-                            <w:rPr>
-                              <w:iCs/>
-                              <w:color w:val="F4931E"/>
-                              <w:szCs w:val="24"/>
-                            </w:rPr>
-                          </w:pPr>
-                          <w:r w:rsidRPr="00057125">
-                            <w:rPr>
-                              <w:szCs w:val="24"/>
-                            </w:rPr>
-                            <w:t>[PROFIEL_TITEL]</w:t>
-                          </w:r>
-                          <w:r w:rsidRPr="002271D3">
-                            <w:rPr>
-                              <w:rStyle w:val="Valori-geel"/>
-                            </w:rPr>
-                            <w:t xml:space="preserve"> // </w:t>
-                          </w:r>
-                          <w:r w:rsidRPr="00057125">
-                            <w:rPr>
-                              <w:szCs w:val="24"/>
-                            </w:rPr>
-                            <w:t><xsl:apply-templates select="//cv:persoonsgegevens/cv:geboortedatum" mode="date-numeric" /></w:t>
-                          </w:r>
-                          <w:r w:rsidRPr="002271D3">
-                            <w:rPr>
-                              <w:rStyle w:val="Valori-geel"/>
-                            </w:rPr>
-                            <w:t xml:space="preserve"> // </w:t>
-                          </w:r>
-                          <w:r w:rsidRPr="00057125">
-                            <w:rPr>
-                              <w:szCs w:val="24"/>
-                            </w:rPr>
-                            <w:t><xsl:value-of select="//cv:persoonsgegevens/cv:woonplaats" /></w:t>
-                          </w:r>
-                          <w:r w:rsidRPr="002271D3">
-                            <w:rPr>
-                              <w:rStyle w:val="Valori-geel"/>
-                            </w:rPr>
-                            <w:t xml:space="preserve"> //</w:t>
-                          </w:r>
-                        </w:p>
-                      </w:txbxContent>
-                    </v:textbox>
-                    <w10:wrap anchorx="margin"/>
-                  </v:shape>
-                </w:pict>
-              </mc:Fallback>
-            </mc:AlternateContent>
+            <w:drawing>
+              <wp:anchor distT="45720" distB="45720" distL="114300" distR="114300" simplePos="0" relativeHeight="251659264" behindDoc="0" locked="0" layoutInCell="1" allowOverlap="1">
+                <wp:simplePos x="0" y="0"/>
+                <wp:positionH relativeFrom="margin">
+                  <wp:align>right</wp:align>
+                </wp:positionH>
+                <wp:positionV relativeFrom="paragraph">
+                  <wp:posOffset>-561995</wp:posOffset>
+                </wp:positionV>
+                <wp:extent cx="5934251" cy="561315"/>
+                <wp:effectExtent l="0" t="0" r="9525" b="10795"/>
+                <wp:wrapNone/>
+                <wp:docPr id="217" name="Tekstvak 2"/>
+                <wp:cNvGraphicFramePr>
+                  <a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"/>
+                </wp:cNvGraphicFramePr>
+                <a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+                  <a:graphicData uri="http://schemas.microsoft.com/office/word/2010/wordprocessingShape">
+                    <wps:wsp>
+                      <wps:cNvSpPr txBox="1">
+                        <a:spLocks noChangeArrowheads="1"/>
+                      </wps:cNvSpPr>
+                      <wps:spPr bwMode="auto">
+                        <a:xfrm>
+                          <a:off x="0" y="0"/>
+                          <a:ext cx="5934251" cy="561315"/>
+                        </a:xfrm>
+                        <a:prstGeom prst="rect">
+                          <a:avLst/>
+                        </a:prstGeom>
+                        <a:noFill/>
+                        <a:ln w="9525">
+                          <a:noFill/>
+                          <a:miter lim="800000"/>
+                          <a:headEnd/>
+                          <a:tailEnd/>
+                        </a:ln>
+                      </wps:spPr>
+                      <wps:txbx>
+                        <w:txbxContent>
+                          <w:p w:rsidR="00C34A5E" w:rsidRPr="00C34A5E" w:rsidRDefault="00C34A5E" w:rsidP="00C34A5E">
+                            <w:pPr>
+                              <w:pStyle w:val="Titel"/>
+                            </w:pPr>
+                            <w:r w:rsidRPr="00C34A5E">
+                              <w:t><xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" /></w:t>
+                            </w:r>
+                          </w:p>
+                          <w:p w:rsidR="0041112D" w:rsidRPr="00057125" w:rsidRDefault="00C34A5E" w:rsidP="00057125">
+                            <w:pPr>
+                              <w:pStyle w:val="Ondertitel"/>
+                              <w:rPr>
+                                <w:iCs/>
+                                <w:color w:val="F4931E"/>
+                                <w:szCs w:val="24"/>
+                              </w:rPr>
+                            </w:pPr>
+                            <w:r w:rsidRPr="00057125">
+                              <w:rPr>
+                                <w:szCs w:val="24"/>
+                              </w:rPr>
+                              <w:t>[FUNCTIE_TITEL]</w:t>
+                            </w:r>
+                            <w:r w:rsidRPr="002271D3">
+                              <w:rPr>
+                                <w:rStyle w:val="Valori-geel"/>
+                              </w:rPr>
+                              <w:t xml:space="preserve"> // </w:t>
+                            </w:r>
+                            <w:r w:rsidRPr="00057125">
+                              <w:rPr>
+                                <w:szCs w:val="24"/>
+                              </w:rPr>
+                              <w:t><xsl:apply-templates select="//cv:persoonsgegevens/cv:geboortedatum" mode="date-numeric" /></w:t>
+                            </w:r>
+                            <w:r w:rsidRPr="002271D3">
+                              <w:rPr>
+                                <w:rStyle w:val="Valori-geel"/>
+                              </w:rPr>
+                              <w:t xml:space="preserve"> // </w:t>
+                            </w:r>
+                            <w:r w:rsidRPr="00057125">
+                              <w:rPr>
+                                <w:szCs w:val="24"/>
+                              </w:rPr>
+                              <w:t><xsl:value-of select="//cv:persoonsgegevens/cv:woonplaats" /></w:t>
+                            </w:r>
+                            <w:r w:rsidRPr="002271D3">
+                              <w:rPr>
+                                <w:rStyle w:val="Valori-geel"/>
+                              </w:rPr>
+                              <w:t xml:space="preserve"> //</w:t>
+                            </w:r>
+                          </w:p>
+                        </w:txbxContent>
+                      </wps:txbx>
+                      <wps:bodyPr rot="0" vert="horz" wrap="square" lIns="0" tIns="0" rIns="0" bIns="0" anchor="t" anchorCtr="0">
+                        <a:noAutofit/>
+                      </wps:bodyPr>
+                    </wps:wsp>
+                  </a:graphicData>
+                </a:graphic>
+                <wp14:sizeRelH relativeFrom="margin">
+                  <wp14:pctWidth>0</wp14:pctWidth>
+                </wp14:sizeRelH>
+                <wp14:sizeRelV relativeFrom="margin">
+                  <wp14:pctHeight>0</wp14:pctHeight>
+                </wp14:sizeRelV>
+              </wp:anchor>
+            </w:drawing>
           </w:r>
         </w:p>
         <w:p w:rsidR="0041112D" w:rsidRDefault="0041112D" w:rsidP="0041112D"/>
@@ -312,261 +239,71 @@
         <!--
           BRANCHES
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Branches</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[BRANCHE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidR="00DE6855" w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:variable name="branches" select="//cv:branchekennis[normalize-space()]" />
+        <xsl:if test="$branches">
+          <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+            </w:pPr>
+            <w:r w:rsidRPr="002E2E53">
+              <w:t>Branches</w:t>
+            </w:r>
+          </w:p>
+          <xsl:apply-templates select="$branches">
+              <xsl:sort select="cv:kennisniveau" data-type="number" order="descending" />
+              <xsl:sort select="cv:omschrijving_NL" />
+          </xsl:apply-templates>
+        </xsl:if>
         <!--
           EXPERTISES
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Expertises</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="0081312E" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Expertises'" />
+        </xsl:call-template>
         <!--
           DATABASES
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="00057125" w:rsidRDefault="00BC0871" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r>
-            <w:br w:type="column"/>
-          </w:r>
-          <w:r w:rsidR="002E2E53" w:rsidRPr="0081312E">
-            <w:t>Databases</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Databases'" />
+          <xsl:with-param name="next_column" select="'true'" />
+        </xsl:call-template>
         <!--
           APPLICATIES
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Applicaties</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Software'" />
+        </xsl:call-template>
         <!--
           OS EN NETWERKEN
         -->
-        <w:p w:rsidR="00BC0871" w:rsidRPr="002E2E53" w:rsidRDefault="00BC0871" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r>
-            <w:t>OS en Netwerken</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="00BC0871" w:rsidRDefault="00BC0871" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Operating systems'" />
+        </xsl:call-template>
         <!--
           TOOLS
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Tools</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Tools'" />
+        </xsl:call-template>
         <!--
           PROGRAMMEREN
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="00BC0871" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r>
-            <w:br w:type="column"/>
-          </w:r>
-          <w:r w:rsidR="002E2E53" w:rsidRPr="002E2E53">
-            <w:t>Programmeren</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Programmeertalen'" />
+          <xsl:with-param name="next_column" select="'true'" />
+        </xsl:call-template>
         <!--
           METHODES
         -->
-        <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Methodes</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Methoden en technieken'" />
+        </xsl:call-template>
         <!--
           CERTIFICERINGEN
         -->
-        <w:p w:rsidR="00BC0871" w:rsidRPr="002E2E53" w:rsidRDefault="00BC0871" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="002E2E53">
-            <w:t>Certificeringen</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="00BC0871" w:rsidRDefault="00BC0871" w:rsidP="00D63E1B">
-          <w:pPr>
-            <w:pStyle w:val="Valori-tabel"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[CATEGORIE]</w:t>
-          </w:r>
-          <w:r>
-            <w:tab/>
-          </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-niveau"/>
-            </w:rPr>
-            <w:t></w:t>
-          </w:r>
-        </w:p>
+        <xsl:call-template name="vaardigheden">
+          <xsl:with-param name="categorie" select="'Certificeringen'" />
+        </xsl:call-template>
         <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="002E2E53">
           <w:pPr>
             <w:sectPr w:rsidR="002E2E53" w:rsidSect="002E2E53">
@@ -583,6 +320,9 @@
           WERKERVARING
           
         -->
+        <xsl:variable name="werkopdrachten"
+                      select="//cv:werkopdracht[(cv:opnemen_in_cv = 1)
+                              and (normalize-space(cv:werkgever) or normalize-space(cv:opdrachtgever))]" />
         <w:p w:rsidR="00A37916" w:rsidRDefault="002E2E53" w:rsidP="002E2E53">
           <w:pPr>
             <w:pStyle w:val="Kop1"/>
@@ -658,331 +398,326 @@
               </w:p>
             </w:tc>
           </w:tr>
-          <w:tr w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3261" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[PERIODE_VAN] – [PERIODE_TOT]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3118" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[ROL]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2967" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[OPDRACHTGEVER]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
+          <!-- Sorteer op 'sort_index' als die is gedefinieerd, anders op 'periode_eind'. -->
+          <xsl:choose>
+            <xsl:when test="$werkopdrachten[normalize-space(cv:sort_index) != '']">
+              <xsl:apply-templates select="$werkopdrachten" mode="overzicht">
+                <xsl:sort select="cv:sort_index" data-type="number" />
+              </xsl:apply-templates>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- Eerst de werkopdrachten die tot 'heden' lopen... -->
+              <xsl:apply-templates select="$werkopdrachten[not(cv:periode_eind)]" mode="overzicht" />
+              <!-- ...en dan de rest. -->
+              <xsl:apply-templates select="$werkopdrachten[cv:periode_eind]" mode="overzicht">
+                <xsl:sort select="cv:periode_eind" order="descending" />
+                <xsl:sort select="cv:sort_index" data-type="number" />
+              </xsl:apply-templates>
+            </xsl:otherwise>
+          </xsl:choose>
         </w:tbl>
         <!--
         
           OPLEIDINGEN
           
         -->
-        <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-          <w:pPr>
-            <w:pStyle w:val="Kop1"/>
-          </w:pPr>
-          <w:r>
-            <w:t>Opleidingen</w:t>
-          </w:r>
-        </w:p>
-        <w:tbl>
-          <w:tblPr>
-            <w:tblStyle w:val="Tabelraster"/>
-            <w:tblW w:w="0" w:type="auto"/>
-            <w:tblBorders>
-              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-            </w:tblBorders>
-            <w:tblCellMar>
-              <w:left w:w="0" w:type="dxa"/>
-              <w:right w:w="0" w:type="dxa"/>
-            </w:tblCellMar>
-            <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
-          </w:tblPr>
-          <w:tblGrid>
-            <w:gridCol w:w="3261"/>
-            <w:gridCol w:w="3118"/>
-            <w:gridCol w:w="2967"/>
-          </w:tblGrid>
-          <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3261" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Opleiding</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3118" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Locatie</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2967" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Diploma</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
-          <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3261" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[OPLEIDING]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3118" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[INSTITUUT]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2967" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-                <w:r>
-                  <w:t>[JAAR_DIPLOMA]</w:t>
-                </w:r>
-                <w:r w:rsidRPr="002271D3">
-                  <w:rPr>
-                    <w:rStyle w:val="Valori-geel"/>
-                  </w:rPr>
-                  <w:t xml:space="preserve"> // </w:t>
-                </w:r>
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[DIPLOMA]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
-        </w:tbl>
+        <xsl:variable name="opleidingen"
+                      select="//cv:opleiding[(not(cv:soort_opleiding) or (cv:soort_opleiding = 0))
+                              and (normalize-space(cv:naam_opleiding | cv:naam_instituut))]" />
+        <xsl:if test="$opleidingen">
+          <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+            <w:pPr>
+              <w:pStyle w:val="Kop1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Opleidingen</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblStyle w:val="Tabelraster"/>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblBorders>
+                <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:left w:w="0" w:type="dxa"/>
+                <w:right w:w="0" w:type="dxa"/>
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="3261"/>
+              <w:gridCol w:w="3118"/>
+              <w:gridCol w:w="2967"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3261" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Opleiding</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3118" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Locatie</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2967" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Diploma</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <xsl:apply-templates select="$opleidingen">
+              <xsl:sort select="cv:jaar_diploma" data-type="number" order="descending" />
+              <xsl:sort select="cv:diploma" data-type="number" />
+            </xsl:apply-templates>
+          </w:tbl>
+        </xsl:if>
         <!--
         
           CURSUSSEN
           
         -->
-        <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-          <w:pPr>
-            <w:pStyle w:val="Kop1"/>
-          </w:pPr>
-          <w:r>
-            <w:t>Cursussen</w:t>
-          </w:r>
-        </w:p>
-        <w:tbl>
-          <w:tblPr>
-            <w:tblStyle w:val="Tabelraster"/>
-            <w:tblW w:w="0" w:type="auto"/>
-            <w:tblInd w:w="-5" w:type="dxa"/>
-            <w:tblBorders>
-              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-              <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
-            </w:tblBorders>
-            <w:tblCellMar>
-              <w:left w:w="0" w:type="dxa"/>
-              <w:right w:w="0" w:type="dxa"/>
-            </w:tblCellMar>
-            <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
-          </w:tblPr>
-          <w:tblGrid>
-            <w:gridCol w:w="3266"/>
-            <w:gridCol w:w="3118"/>
-            <w:gridCol w:w="2962"/>
-          </w:tblGrid>
-          <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3266" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Opleiding</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3118" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Locatie</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2962" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>Certificaat</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
-          <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3266" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[OPLEIDING]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="3118" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[INSTITUUT]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2962" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
-                <w:r>
-                  <w:t>[JAAR_DIPLOMA]</w:t>
-                </w:r>
-                <w:r w:rsidRPr="002271D3">
-                  <w:rPr>
-                    <w:rStyle w:val="Valori-geel"/>
-                  </w:rPr>
-                  <w:t xml:space="preserve"> // </w:t>
-                </w:r>
-                <w:r w:rsidRPr="00CE4E21">
-                  <w:t>[DIPLOMA]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
-        </w:tbl>
+        <xsl:variable name="cursussen" select="//cv:opleiding[(cv:soort_opleiding > 0)
+                                               and (normalize-space(cv:naam_opleiding | cv:naam_instituut))]" />
+        <xsl:if test="$cursussen">
+          <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+            <w:pPr>
+              <w:pStyle w:val="Kop1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Cursussen</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblStyle w:val="Tabelraster"/>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblInd w:w="-5" w:type="dxa"/>
+              <w:tblBorders>
+                <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:left w:w="0" w:type="dxa"/>
+                <w:right w:w="0" w:type="dxa"/>
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="3266"/>
+              <w:gridCol w:w="3118"/>
+              <w:gridCol w:w="2962"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3266" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Opleiding</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3118" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Locatie</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2962" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Certificaat</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <xsl:apply-templates select="$cursussen">
+              <xsl:sort select="cv:jaar_diploma" data-type="number" order="descending" />
+              <xsl:sort select="cv:diploma" data-type="number" />
+            </xsl:apply-templates>
+          </w:tbl>
+        </xsl:if>
+        <!--
+        
+          PUBLICATIES
+          
+        -->
+        <xsl:variable name="publicaties" select="//cv:publicatie" />
+        <xsl:if test="$publicaties">
+          <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+            <w:pPr>
+              <w:pStyle w:val="Kop1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Publicaties</w:t>
+            </w:r>
+          </w:p>
+          <w:tbl>
+            <w:tblPr>
+              <w:tblStyle w:val="Tabelraster"/>
+              <w:tblW w:w="0" w:type="auto"/>
+              <w:tblInd w:w="-5" w:type="dxa"/>
+              <w:tblBorders>
+                <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:bottom w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideH w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+                <w:insideV w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              </w:tblBorders>
+              <w:tblCellMar>
+                <w:left w:w="0" w:type="dxa"/>
+                <w:right w:w="0" w:type="dxa"/>
+              </w:tblCellMar>
+              <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>
+            </w:tblPr>
+            <w:tblGrid>
+              <w:gridCol w:w="3266"/>
+              <w:gridCol w:w="3118"/>
+              <w:gridCol w:w="2962"/>
+            </w:tblGrid>
+            <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3266" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Titel</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="3118" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Omschrijving</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+              <w:tc>
+                <w:tcPr>
+                  <w:tcW w:w="2962" w:type="dxa"/>
+                </w:tcPr>
+                <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+                  <w:pPr>
+                    <w:pStyle w:val="Kop2"/>
+                    <w:outlineLvl w:val="1"/>
+                  </w:pPr>
+                  <w:r>
+                    <w:t>Media</w:t>
+                  </w:r>
+                </w:p>
+              </w:tc>
+            </w:tr>
+            <xsl:apply-templates select="$publicaties">
+              <xsl:sort select="cv:jaar" data-type="number" order="descending" />
+            </xsl:apply-templates>
+          </w:tbl>
+        </xsl:if>
         <!--
         
           INTERESSES
           
         -->
-        <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-          <w:pPr>
-            <w:pStyle w:val="Kop1"/>
-          </w:pPr>
-          <w:r>
-            <w:t>Interesses</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="004609AB">
-          <w:pPr>
-            <w:pStyle w:val="Paragraaf"/>
-          </w:pPr>
-          <w:r>
-            <w:t>[INTERESSES]</w:t>
-          </w:r>
-        </w:p>
+        <xsl:variable name="interesses" select="//cv:interesse" />
+        <xsl:if test="$interesses">
+          <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+            <w:pPr>
+              <w:pStyle w:val="Kop1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Interesses</w:t>
+            </w:r>
+          </w:p>
+          <xsl:apply-templates select="$interesses" />
+        </xsl:if>
         <!--
         
           REFERENTIES
           
         -->
-        <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-          <w:pPr>
-            <w:pStyle w:val="Kop1"/>
-          </w:pPr>
-          <w:r>
-            <w:t>Referenties</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="00902CB9" w:rsidRPr="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
-          <w:pPr>
-            <w:pStyle w:val="Kop2"/>
-          </w:pPr>
-          <w:r w:rsidRPr="00902CB9">
-            <w:t>[NAAM_REFERENT] [FUNCTIE_REFERENT]</w:t>
-          </w:r>
-        </w:p>
-        <w:p w:rsidR="00EA114C" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-          <w:r>
-            <w:t>[REFERENTIES]</w:t>
-          </w:r>
-        </w:p>
+        <xsl:variable name="referenties" select="//cv:referentie" />
+        <xsl:if test="$referenties">
+          <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+            <w:pPr>
+              <w:pStyle w:val="Kop1"/>
+            </w:pPr>
+            <w:r>
+              <w:t>Referenties</w:t>
+            </w:r>
+          </w:p>
+          <xsl:apply-templates select="$referentes" />
+        </xsl:if>
         <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C">
           <w:pPr>
             <w:spacing w:after="160"/>
@@ -1028,172 +763,23 @@
             <w:gridCol w:w="2415"/>
             <w:gridCol w:w="6946"/>
           </w:tblGrid>
-          <w:tr w:rsidR="00EA114C" w:rsidRPr="00CE4E21" w:rsidTr="00936F5B">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2415" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:pPr>
-                  <w:rPr>
-                    <w:color w:val="0A1C5C"/>
-                  </w:rPr>
-                </w:pPr>
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="0A1C5C"/>
-                  </w:rPr>
-                  <w:t>[PERIODE_VAN] – [PERIODE_TOT]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:pPr>
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                </w:pPr>
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                  <w:t>[ROL]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                  <w:t>[OPDRACHTGEVER]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="6946" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-                <w:pPr>
-                  <w:pStyle w:val="Paragraaf"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>[OPDRACHTFORMULERING]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r w:rsidRPr="00936F5B">
-                  <w:t>Taken en werkzaamheden</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-                <w:pPr>
-                  <w:pStyle w:val="Paragraaf"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>[WERKZAAMHEDEN]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r w:rsidRPr="00936F5B">
-                  <w:t>Resultaat</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-                <w:pPr>
-                  <w:pStyle w:val="Paragraaf"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>[RESULTAAT]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
-                <w:pPr>
-                  <w:pStyle w:val="Kop2"/>
-                  <w:outlineLvl w:val="1"/>
-                </w:pPr>
-                <w:r w:rsidRPr="00936F5B">
-                  <w:t>Werkomgeving</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00936F5B" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-                <w:pPr>
-                  <w:pStyle w:val="Paragraaf"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>[STEEKWOORDEN]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
-          
-          <w:tr w:rsidR="00EA114C" w:rsidRPr="00CE4E21" w:rsidTr="00936F5B">
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="2415" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:pPr>
-                  <w:rPr>
-                    <w:color w:val="0A1C5C"/>
-                  </w:rPr>
-                </w:pPr>
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="0A1C5C"/>
-                  </w:rPr>
-                  <w:t>[PERIODE_VAN] – [PERIODE_TOT]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:pPr>
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                </w:pPr>
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                  <w:t>[ROL]</w:t>
-                </w:r>
-              </w:p>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
-                <w:pPr>
-                  <w:rPr>
-                    <w:iCs/>
-                    <w:color w:val="F4931E"/>
-                  </w:rPr>
-                </w:pPr>
-                <w:r w:rsidRPr="0081312E">
-                  <w:rPr>
-                    <w:color w:val="F39900"/>
-                  </w:rPr>
-                  <w:t>[OPDRACHTGEVER]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-            <w:tc>
-              <w:tcPr>
-                <w:tcW w:w="6946" w:type="dxa"/>
-              </w:tcPr>
-              <w:p w:rsidR="00EA114C" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-                <w:pPr>
-                  <w:pStyle w:val="Paragraaf"/>
-                </w:pPr>
-                <w:r>
-                  <w:t>[SAMENVATTING]</w:t>
-                </w:r>
-              </w:p>
-            </w:tc>
-          </w:tr>
+          <!-- Sorteer op 'sort_index' als die is gedefinieerd, anders op 'periode_eind'. -->
+          <xsl:choose>
+            <xsl:when test="$werkopdrachten[normalize-space(cv:sort_index) != '']">
+              <xsl:apply-templates select="$werkopdrachten" mode="detail">
+                <xsl:sort select="cv:sort_index" data-type="number" />
+              </xsl:apply-templates>
+            </xsl:when>
+            <xsl:otherwise>
+              <!-- Eerst de werkopdrachten die tot 'heden' lopen... -->
+              <xsl:apply-templates select="$werkopdrachten[not(cv:periode_eind)]" mode="detail" />
+              <!-- ...en dan de rest. -->
+              <xsl:apply-templates select="$werkopdrachten[cv:periode_eind]" mode="detail">
+                <xsl:sort select="cv:periode_eind" order="descending" />
+                <xsl:sort select="cv:sort_index" data-type="number" />
+              </xsl:apply-templates>
+            </xsl:otherwise>
+          </xsl:choose>
         </w:tbl>
         <w:p w:rsidR="00902CB9" w:rsidRPr="00720889" w:rsidRDefault="00902CB9" w:rsidP="00720889">
           <w:pPr>
@@ -1212,24 +798,7 @@
       </w:body>
     </w:document>
   </xsl:template>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  
   <xsl:template match="cv:talenkennis">
     <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="002271D3">
       <w:pPr>
@@ -1248,6 +817,355 @@
         </w:t>
       </w:r>
     </w:p>
+  </xsl:template>
+  
+  <xsl:template match="cv:branchekennis">
+    <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
+      <w:pPr>
+        <w:pStyle w:val="Valori-tabel"/>
+      </w:pPr>
+      <w:r>
+        <w:t><xsl:value-of select="cv:omschrijving_NL" /></w:t>
+        <w:tab/>
+      </w:r>
+      <w:r w:rsidR="00DE6855" w:rsidRPr="002271D3">
+        <w:rPr>
+          <w:rStyle w:val="Valori-niveau"/>
+        </w:rPr>
+        <xsl:call-template name="skill-level">
+          <xsl:with-param name="level" select="cv:kennisniveau" />
+        </xsl:call-template>
+      </w:r>
+    </w:p>
+  </xsl:template>
+  
+  <xsl:template name="vaardigheden">
+    <xsl:param name="categorie" />
+    <xsl:param name="next_column" />
+    <xsl:variable name="vaardigheden" select="//cv:vaardigheid[cv:categorie = $categorie]" />
+    <xsl:if test="$vaardigheden">
+      <w:p w:rsidR="002E2E53" w:rsidRPr="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="0081312E">
+        <w:pPr>
+          <w:pStyle w:val="Kop2"/>
+        </w:pPr>
+        <w:r w:rsidRPr="002E2E53">
+          <xsl:if test="$next_column">
+            <w:br w:type="column"/>
+          </xsl:if>
+          <w:t><xsl:value-of select="$categorie" /></w:t>
+        </w:r>
+      </w:p>
+      <xsl:apply-templates select="$vaardigheden">
+          <xsl:sort select="cv:kennisniveau" data-type="number" order="descending" />
+          <xsl:sort select="cv:omschrijving" />
+      </xsl:apply-templates>
+    </xsl:if>
+  </xsl:template>
+  
+  <xsl:template match="cv:vaardigheid">
+    <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="00D63E1B">
+      <w:pPr>
+        <w:pStyle w:val="Valori-tabel"/>
+      </w:pPr>
+      <w:r>
+        <w:t><xsl:value-of select="cv:omschrijving" /></w:t>
+        <w:tab/>
+      </w:r>
+      <w:r w:rsidR="00DE6855" w:rsidRPr="002271D3">
+        <w:rPr>
+          <w:rStyle w:val="Valori-niveau"/>
+        </w:rPr>
+        <xsl:call-template name="skill-level">
+          <xsl:with-param name="level" select="cv:kennisniveau" />
+        </xsl:call-template>
+      </w:r>
+    </w:p>
+  </xsl:template>
+
+  <xsl:template match="cv:opleiding">
+    <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3261" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t><xsl:value-of select="cv:naam_opleiding" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3118" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t>
+              <xsl:value-of select="cv:naam_instituut" />
+              <xsl:text> </xsl:text>
+              <xsl:value-of select="cv:plaats_instituut" />
+            </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="2967" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+          <w:r>
+            <w:t><xsl:value-of select="cv:jaar_diploma" /></w:t>
+          </w:r>
+          <w:r w:rsidRPr="002271D3">
+            <w:rPr>
+              <w:rStyle w:val="Valori-geel"/>
+            </w:rPr>
+            <w:t xml:space="preserve"> // </w:t>
+          </w:r>
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t>
+              <xsl:if test="cv:diploma = 1">
+                <xsl:text>diploma</xsl:text>
+              </xsl:if>
+              <xsl:if test="cv:diploma = 2">
+                <xsl:text>certificaat</xsl:text>
+              </xsl:if>
+            </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+  </xsl:template>
+  
+  <xsl:template match="cv:publicatie">
+    <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3261" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:rPr>
+              <w:i/>
+            </w:rPr>
+            <w:t><xsl:value-of select="cv:titel" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3118" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t><xsl:value-of select="cv:omschrijving_nl_NL" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="2967" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+          <w:r>
+            <w:t><xsl:value-of select="cv:jaar" /></w:t>
+          </w:r>
+          <w:r w:rsidRPr="002271D3">
+            <w:rPr>
+              <w:rStyle w:val="Valori-geel"/>
+            </w:rPr>
+            <w:t xml:space="preserve"> // </w:t>
+          </w:r>
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t><xsl:value-of select="cv:media" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+  </xsl:template>
+
+  <xsl:template match="cv:interesse">
+    <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="004609AB">
+      <w:pPr>
+        <w:pStyle w:val="Paragraaf"/>
+      </w:pPr>
+      <xsl:apply-templates select="." mode="format-text" />
+    </w:p>
+  </xsl:template>
+  
+  <xsl:template match="cv:referentie">
+    <w:p w:rsidR="00902CB9" w:rsidRPr="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="0081312E">
+      <w:pPr>
+        <w:pStyle w:val="Kop2"/>
+      </w:pPr>
+      <w:r w:rsidRPr="00902CB9">
+        <w:t><xsl:value-of select="cv:naam_referent" /> <xsl:value-of select="cv:functie_referent" /></w:t>
+      </w:r>
+    </w:p>
+    <w:p w:rsidR="00EA114C" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
+      <xsl:apply-templates select="cv:referentie_text" mode="format-text" />
+    </w:p>
+  </xsl:template>
+
+  <xsl:template match="cv:werkopdracht" mode="overzicht">
+    <xsl:variable name="werkervaring" select="cv:werkervaring[cv:locale = $locale]" />
+    <w:tr w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3261" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t>
+              <xsl:apply-templates select="cv:periode_begin" mode="date-period" />
+              <xsl:text xml:space="preserve"> – </xsl:text>
+              <xsl:choose>
+                <xsl:when test="cv:periode_eind">
+                  <xsl:apply-templates select="cv:periode_eind" mode="date-period" />
+                </xsl:when>
+                <xsl:otherwise>heden</xsl:otherwise>
+              </xsl:choose>
+            </w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="3118" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t><xsl:value-of select="$werkervaring/cv:rol" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="2967" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
+          <w:r w:rsidRPr="00CE4E21">
+            <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+    </w:tr>
+  </xsl:template>
+  
+  <xsl:template match="cv:werkopdracht" mode="detail">
+    <xsl:variable name="werkervaring" select="cv:werkervaring[cv:locale = $locale]" />
+    <w:tr w:rsidR="00EA114C" w:rsidRPr="00CE4E21" w:rsidTr="00936F5B">
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="2415" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
+          <w:pPr>
+            <w:rPr>
+              <w:color w:val="0A1C5C"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="0081312E">
+            <w:rPr>
+              <w:color w:val="0A1C5C"/>
+            </w:rPr>
+            <w:t>
+              <xsl:apply-templates select="cv:periode_begin" mode="date-period" />
+              <xsl:text xml:space="preserve"> – </xsl:text>
+              <xsl:choose>
+                <xsl:when test="cv:periode_eind">
+                  <xsl:apply-templates select="cv:periode_eind" mode="date-period" />
+                </xsl:when>
+                <xsl:otherwise>heden</xsl:otherwise>
+              </xsl:choose>
+            </w:t>
+          </w:r>
+        </w:p>
+        <w:p w:rsidR="00EA114C" w:rsidRPr="0081312E" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
+          <w:pPr>
+            <w:rPr>
+              <w:color w:val="F39900"/>
+            </w:rPr>
+          </w:pPr>
+          <w:r w:rsidRPr="0081312E">
+            <w:rPr>
+              <w:color w:val="F39900"/>
+            </w:rPr>
+            <w:t><xsl:value-of select="$werkervaring/cv:rol" /></w:t>
+          </w:r>
+        </w:p>
+        <w:p w:rsidR="00EA114C" w:rsidRPr="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="00EA114C">
+          <w:r w:rsidRPr="0081312E">
+            <w:rPr>
+              <w:color w:val="F39900"/>
+            </w:rPr>
+            <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+          </w:r>
+        </w:p>
+      </w:tc>
+      <w:tc>
+        <w:tcPr>
+          <w:tcW w:w="6946" w:type="dxa"/>
+        </w:tcPr>
+        <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+          <w:pPr>
+            <w:pStyle w:val="Paragraaf"/>
+          </w:pPr>
+          <xsl:apply-templates select="$werkervaring/cv:opdrachtformulering" mode="format-text" />
+        </w:p>
+        <xsl:if test="normalize-space($werkervaring/cv:werkzaamheden)">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+              <w:outlineLvl w:val="1"/>
+            </w:pPr>
+            <w:r w:rsidRPr="00936F5B">
+              <w:t>Taken en werkzaamheden</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf"/>
+            </w:pPr>
+            <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
+          </w:p>
+        </xsl:if>
+        <xsl:if test="normalize-space($werkervaring/cv:resultaat)">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+              <w:outlineLvl w:val="1"/>
+            </w:pPr>
+            <w:r w:rsidRPr="00936F5B">
+              <w:t>Resultaat</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf"/>
+            </w:pPr>
+            <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
+          </w:p>
+        </xsl:if>
+        <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+              <w:outlineLvl w:val="1"/>
+            </w:pPr>
+            <w:r w:rsidRPr="00936F5B">
+              <w:t>Werkomgeving</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00936F5B" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf"/>
+            </w:pPr>
+            <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
+          </w:p>
+        </xsl:if>
+      </w:tc>
+    </w:tr>
   </xsl:template>
   
 </xsl:stylesheet>

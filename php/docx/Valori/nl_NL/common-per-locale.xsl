@@ -18,6 +18,12 @@
     <xsl:value-of select="substring(., 1, 4)" />
   </xsl:template>
 
+  <xsl:template match="* | @* | text()" mode="date-period">
+    <xsl:value-of select="substring(., 6, 2)" />
+    <xsl:text>-</xsl:text>
+    <xsl:value-of select="substring(., 1, 4)" />
+  </xsl:template>
+
   <xsl:template match="* | @* | text()" mode="linguistics-level">
     <xsl:choose>
       <xsl:when test=". = 1"></xsl:when>

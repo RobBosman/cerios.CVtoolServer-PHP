@@ -31,8 +31,6 @@
     <w:document mc:Ignorable="w14 w15 wp14">
       <w:body>
         <w:p w:rsidR="0041112D" w:rsidRDefault="00C34A5E" w:rsidP="0041112D">
-          <w:bookmarkStart w:id="0" w:name="_GoBack"/>
-          <w:bookmarkEnd w:id="0"/>
           <w:r>
             <w:rPr>
               <w:noProof/>
@@ -99,7 +97,7 @@
                               <w:rPr>
                                 <w:szCs w:val="24"/>
                               </w:rPr>
-                              <w:t>[FUNCTIE_TITEL]</w:t>
+                              <w:t><xsl:value-of select="//cv:persoonsgegevens/cv:functie_titel" /></w:t>
                             </w:r>
                             <w:r w:rsidRPr="002271D3">
                               <w:rPr>
@@ -736,7 +734,6 @@
             <w:pStyle w:val="Kop1"/>
           </w:pPr>
           <w:r>
-            <w:lastRenderedPageBreak/>
             <w:t>Werkervaring</w:t>
           </w:r>
         </w:p>
@@ -751,7 +748,7 @@
               <w:bottom w:val="single" w:sz="4" w:space="0" w:color="F4931E"/>
               <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
               <w:insideH w:val="single" w:sz="4" w:space="0" w:color="F4931E"/>
-              <w:insideV w:val="dashed" w:sz="4" w:space="0" w:color="F4931E"/>
+              <w:insideV w:val="none" w:sz="4" w:space="0" w:color="auto"/>
             </w:tblBorders>
             <w:tblCellMar>
               <w:left w:w="0" w:type="dxa"/>

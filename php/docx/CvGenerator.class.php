@@ -55,6 +55,12 @@ class CvGenerator {
     }
 
     private function generateDocx() {
+        $hasLayout = (strlen($this->layout) > 0);
+        if (!$hasLayout) {
+            // use default template
+            $this->layout = 'Cerios';
+        }
+      
         // Use the model-XML to generate several files needed to compose the DOCX document.
         $docxComponents = array();
         $docxComponents['word/_rels/document.xml.rels'] = $this->xslTransform("document.xml.rels.xsl");
@@ -64,7 +70,7 @@ class CvGenerator {
         $docxComponents['word/footer1.xml'] = $this->xslTransform("footer1.xml.xsl");
         $docxComponents['docProps/core.xml'] = $this->xslTransform("core.xml.xsl");
 
-        if (strlen($this->layout) > 0) {
+        if ($hasLayout) {
             // Base64-decode images.
             $image1 = $this->xslTransform("image1.b64.xsl");
             if (($image1 != NULL) && (strlen($image1) > 0)) {

@@ -57,7 +57,7 @@ class CvGenerator {
     private function generateDocx() {
         $hasLayout = (strlen($this->layout) > 0);
         if (!$hasLayout) {
-            // use default template
+            // use Cerios template for 'NO-LAYOUT'
             $this->layout = 'Cerios';
         }
       

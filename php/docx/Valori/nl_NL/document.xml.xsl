@@ -269,13 +269,13 @@
           APPLICATIES
         -->
         <xsl:call-template name="vaardigheden">
-          <xsl:with-param name="categorie" select="'Software'" />
+          <xsl:with-param name="categorie" select="'Applicaties'" />
         </xsl:call-template>
         <!--
           OS EN NETWERKEN
         -->
         <xsl:call-template name="vaardigheden">
-          <xsl:with-param name="categorie" select="'Operating systems'" />
+          <xsl:with-param name="categorie" select="'OS en Netwerken'" />
         </xsl:call-template>
         <!--
           TOOLS
@@ -287,14 +287,14 @@
           PROGRAMMEREN
         -->
         <xsl:call-template name="vaardigheden">
-          <xsl:with-param name="categorie" select="'Programmeertalen'" />
+          <xsl:with-param name="categorie" select="'Programmeren'" />
           <xsl:with-param name="next_column" select="'true'" />
         </xsl:call-template>
         <!--
           METHODES
         -->
         <xsl:call-template name="vaardigheden">
-          <xsl:with-param name="categorie" select="'Methoden en technieken'" />
+          <xsl:with-param name="categorie" select="'Methodes'" />
         </xsl:call-template>
         <!--
           CERTIFICERINGEN
@@ -1127,23 +1127,6 @@
             <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
           </w:p>
         </xsl:if>
-        <xsl:if test="normalize-space($werkervaring/cv:resultaat)">
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
-            <w:pPr>
-              <w:pStyle w:val="Kop2"/>
-              <w:outlineLvl w:val="1"/>
-            </w:pPr>
-            <w:r w:rsidRPr="00936F5B">
-              <w:t>Resultaat</w:t>
-            </w:r>
-          </w:p>
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
-          </w:p>
-        </xsl:if>
         <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
           <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
             <w:pPr>
@@ -1159,6 +1142,23 @@
               <w:pStyle w:val="Paragraaf"/>
             </w:pPr>
             <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
+          </w:p>
+        </xsl:if>
+        <xsl:if test="normalize-space($werkervaring/cv:resultaat)">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+              <w:outlineLvl w:val="1"/>
+            </w:pPr>
+            <w:r w:rsidRPr="00936F5B">
+              <w:t>Resultaat</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf"/>
+            </w:pPr>
+            <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
           </w:p>
         </xsl:if>
       </w:tc>

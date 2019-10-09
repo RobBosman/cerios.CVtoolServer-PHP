@@ -1676,6 +1676,7 @@
                 <w:pStyle w:val="Tabeltekstlaatste"/>
               </w:pPr>
               <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
+              <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
             </w:p>
           </w:tc>
         </w:tr>

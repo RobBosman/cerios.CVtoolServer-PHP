@@ -14,8 +14,7 @@
 
   <xsl:template match="/">
     <Relationships>
-      <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-                    Target="media/image1.gif"/>
+      <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/image1.gif"/>
     </Relationships>
   </xsl:template>
 

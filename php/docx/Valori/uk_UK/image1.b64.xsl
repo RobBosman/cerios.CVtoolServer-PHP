@@ -6,8 +6,6 @@
 
   <xsl:output method="text" encoding="UTF-8" />
 
-  <xsl:template match="/">
-    <xsl:value-of select="//cv:visitekaartje" />
-  </xsl:template>
+  <xsl:template match="/" />
 
 </xsl:stylesheet>

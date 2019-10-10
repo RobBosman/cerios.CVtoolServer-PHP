@@ -79,7 +79,7 @@ class CvGenerator {
             }
         }
 
-        $this->contentFilename = $this->createTempZipFile($docxComponents, $this->getSourceFile("$this->layout/cv_template.docx"));
+        $this->contentFilename = $this->createTempZipFile($docxComponents, $this->getSourceFile("$this->layout/template_$this->layout.docx"));
     }
 
     private function getXmlData($restTarget, $jwt) {

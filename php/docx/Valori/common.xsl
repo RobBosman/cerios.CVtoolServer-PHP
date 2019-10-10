@@ -46,30 +46,26 @@
   <xsl:template name="substitute-line-breaks">
     <xsl:param name="text" />
     <xsl:variable name="line-break" select="'&#x0A;'" />
-    <xsl:choose>
-      <xsl:when test="contains($text, $line-break)">
-        <xsl:variable name="text-before-line-break" select="substring-before($text, $line-break)" />
-        <xsl:variable name="text-after-line-break" select="substring-after($text, $line-break)" />
-        <xsl:if test="$text-before-line-break">
-          <w:r>
+    <w:r>
+      <xsl:choose>
+        <xsl:when test="contains($text, $line-break)">
+          <xsl:variable name="text-before-line-break" select="substring-before($text, $line-break)" />
+          <xsl:variable name="text-after-line-break" select="substring-after($text, $line-break)" />
+          <xsl:if test="$text-before-line-break">
             <w:t><xsl:value-of select="$text-before-line-break" /></w:t>
-          </w:r>
-        </xsl:if>
-        <w:r>
+          </xsl:if>
           <w:br />
-        </w:r>
-        <xsl:if test="$text-after-line-break">
-          <xsl:call-template name="substitute-line-breaks">
-            <xsl:with-param name="text" select="$text-after-line-break" />
-          </xsl:call-template>
-        </xsl:if>
-      </xsl:when>
-      <xsl:otherwise>
-        <w:r>
+          <xsl:if test="$text-after-line-break">
+            <xsl:call-template name="substitute-line-breaks">
+              <xsl:with-param name="text" select="$text-after-line-break" />
+            </xsl:call-template>
+          </xsl:if>
+        </xsl:when>
+        <xsl:otherwise>
           <w:t><xsl:value-of select="$text" /></w:t>
-        </w:r>
-      </xsl:otherwise>
-    </xsl:choose>
+        </xsl:otherwise>
+      </xsl:choose>
+    </w:r>
   </xsl:template>
 
 </xsl:stylesheet>

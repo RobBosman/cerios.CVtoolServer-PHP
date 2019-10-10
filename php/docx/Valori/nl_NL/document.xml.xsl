@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:cv="http://ns.bransom.nl/cerios/cv/v20110401"
-  xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
-  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-  xmlns:o="urn:schemas-microsoft-com:office:office"
-  xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
-  xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
-  xmlns:v="urn:schemas-microsoft-com:vml"
-  xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
-  xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
-  xmlns:w10="urn:schemas-microsoft-com:office:word"
-  xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
-  xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
-  xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
-  xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
-  xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
-  xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
-  xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
-  exclude-result-prefixes="cv"
-  version="1.0">
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:cv="http://ns.bransom.nl/cerios/cv/v20110401"
+    xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:o="urn:schemas-microsoft-com:office:office"
+    xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"
+    xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math"
+    xmlns:v="urn:schemas-microsoft-com:vml"
+    xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing"
+    xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing"
+    xmlns:w10="urn:schemas-microsoft-com:office:word"
+    xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"
+    xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml"
+    xmlns:w15="http://schemas.microsoft.com/office/word/2012/wordml"
+    xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup"
+    xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk"
+    xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml"
+    xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"
+    exclude-result-prefixes="cv"
+    version="1.0">
 
   <xsl:import href="common-per-locale.xsl" />
 
@@ -542,7 +542,7 @@
             <w:tblGrid>
               <w:gridCol w:w="3266"/>
               <w:gridCol w:w="3118"/>
-              <w:gridCol w:w="2962"/>
+              <w:gridCol w:w="2967"/>
             </w:tblGrid>
             <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
               <w:tc>
@@ -631,7 +631,7 @@
             <w:tblGrid>
               <w:gridCol w:w="3266"/>
               <w:gridCol w:w="3118"/>
-              <w:gridCol w:w="2962"/>
+              <w:gridCol w:w="2967"/>
             </w:tblGrid>
             <w:tr w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
               <w:tc>
@@ -1127,23 +1127,6 @@
             <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
           </w:p>
         </xsl:if>
-        <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
-            <w:pPr>
-              <w:pStyle w:val="Kop2"/>
-              <w:outlineLvl w:val="1"/>
-            </w:pPr>
-            <w:r w:rsidRPr="00936F5B">
-              <w:t>Werkomgeving</w:t>
-            </w:r>
-          </w:p>
-          <w:p w:rsidR="00936F5B" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
-          </w:p>
-        </xsl:if>
         <xsl:if test="normalize-space($werkervaring/cv:resultaat)">
           <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
             <w:pPr>
@@ -1159,6 +1142,23 @@
               <w:pStyle w:val="Paragraaf"/>
             </w:pPr>
             <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
+          </w:p>
+        </xsl:if>
+        <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
+            <w:pPr>
+              <w:pStyle w:val="Kop2"/>
+              <w:outlineLvl w:val="1"/>
+            </w:pPr>
+            <w:r w:rsidRPr="00936F5B">
+              <w:t>Werkomgeving</w:t>
+            </w:r>
+          </w:p>
+          <w:p w:rsidR="00936F5B" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf"/>
+            </w:pPr>
+            <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
           </w:p>
         </xsl:if>
       </w:tc>

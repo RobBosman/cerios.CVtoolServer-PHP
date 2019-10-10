@@ -23,8 +23,8 @@
           <xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" />
         </xsl:if>
       </dc:title>
+      <dc:subject>Curriculum vitae</dc:subject>
       <dc:creator>Valori CVtool</dc:creator>
-      <cp:lastModifiedBy>Valori CVtool</cp:lastModifiedBy>
       <cp:revision>1</cp:revision>
       <dcterms:created xsi:type="dcterms:W3CDTF"><xsl:value-of select="/cv:*/@at" /></dcterms:created>
     </cp:coreProperties>

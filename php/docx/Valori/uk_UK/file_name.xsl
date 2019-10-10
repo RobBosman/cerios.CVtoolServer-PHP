@@ -11,18 +11,9 @@
   <xsl:output method="text" encoding="UTF-8" />
 
   <xsl:template match="/">
-    <xsl:text>cv </xsl:text>
-    <xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" />
-    <xsl:text> (</xsl:text>
-    <xsl:value-of select="substring(/cv:*/@at, 1, 10)" />
-    <xsl:text> </xsl:text>
-    <xsl:value-of select="substring-after($locale, '_')" />
-    <xsl:text> </xsl:text>
-    <xsl:choose>
-      <xsl:when test="$layout != ''"><xsl:value-of select="$layout" /></xsl:when>
-      <xsl:otherwise>NO-LAYOUT</xsl:otherwise>
-    </xsl:choose>
-    <xsl:text>)</xsl:text>
+    <xsl:text>CV_UK_</xsl:text>
+    <xsl:value-of select="//cv:persoonsgegevens/cv:voornaam" />
+    <xsl:value-of select="//cv:persoonsgegevens/cv:achternaam" />
   </xsl:template>
 
 </xsl:stylesheet>

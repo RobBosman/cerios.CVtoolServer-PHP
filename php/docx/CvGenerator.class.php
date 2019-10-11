@@ -18,17 +18,24 @@ class CvGenerator {
 
     private $locale;
     private $layout;
+    private $templateName;
     private $accountXml;
     private $contentFilename;
+    private $outputFilename;
 
     public function __construct() {
         // Determine the restTarget, language and layout.
         $restTarget = filter_input(INPUT_POST, self::TAG_REST_TARGET);
         $jwt = filter_input(INPUT_POST, self::TAG_JWT);
         $this->locale = filter_input(INPUT_POST, self::TAG_LOCALE);
-        $this->layout = filter_input(INPUT_POST, self::TAG_LAYOUT);
         if ($this->locale == NULL) {
             $this->locale = 'nl_NL';
+        }
+        $this->layout = filter_input(INPUT_POST, self::TAG_LAYOUT);
+        $this->templateName = $this->layout;
+        if (strlen($this->templateName) == 0) {
+            // use Cerios template for 'NO-LAYOUT'
+            $this->templateName = 'Cerios';
         }
         // Get the model-XML.
         $this->accountXml = $this->getXmlData($restTarget, $jwt);
@@ -47,20 +54,14 @@ class CvGenerator {
     }
 
     public function getOutputFileName() {
-        return $this->xslTransform("file_name.xsl");
+        return $this->outputFilename;
     }
 
     public function getContentFilename() {
         return $this->contentFilename;
     }
-
+    
     private function generateDocx() {
-        $hasLayout = (strlen($this->layout) > 0);
-        if (!$hasLayout) {
-            // use Cerios template for 'NO-LAYOUT'
-            $this->layout = 'Cerios';
-        }
-      
         // Use the model-XML to generate several files needed to compose the DOCX document.
         $docxComponents = array();
         $docxComponents['word/_rels/document.xml.rels'] = $this->xslTransform("document.xml.rels.xsl");
@@ -70,16 +71,20 @@ class CvGenerator {
         $docxComponents['word/footer1.xml'] = $this->xslTransform("footer1.xml.xsl");
         $docxComponents['docProps/core.xml'] = $this->xslTransform("core.xml.xsl");
 
-        if ($hasLayout) {
+        if (strlen($this->layout) > 0) {
             // Base64-decode images.
             $image1 = $this->xslTransform("image1.b64.xsl");
             if (($image1 != NULL) && (strlen($image1) > 0)) {
                 $image1 = base64_decode($image1);
-                $docxComponents['word/media/image1.jpeg'] = $image1;
             }
+            $docxComponents['word/media/image1.jpeg'] = $image1;
+        } else {
+            $docxComponents['word/media/image1.jpeg'] = NULL;
         }
 
-        $this->contentFilename = $this->createTempZipFile($docxComponents, $this->getSourceFile("$this->layout/template_$this->layout.docx"));
+        $sourceFile = $this->getSourceFile("$this->templateName/template_$this->templateName.docx");
+        $this->contentFilename = $this->createTempZipFile($docxComponents, $sourceFile);
+        $this->outputFilename = $this->xslTransform("file_name.xsl");
     }
 
     private function getXmlData($restTarget, $jwt) {
@@ -96,7 +101,7 @@ class CvGenerator {
 
     private function xslTransform($styleSheetFileName) {
         $xslDoc = new DOMDocument();
-        $xslDoc->load($this->getSourceFile("$this->layout/$this->locale/$styleSheetFileName"));
+        $xslDoc->load($this->getSourceFile("$this->templateName/$this->locale/$styleSheetFileName"));
         $xsltProc = new XSLTProcessor();
         $xsltProc->importStylesheet($xslDoc);
         $xsltParams = array(

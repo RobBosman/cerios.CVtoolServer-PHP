@@ -251,7 +251,7 @@
           </w:p>
           <xsl:apply-templates select="$branches">
               <xsl:sort select="cv:kennisniveau" data-type="number" order="descending" />
-              <xsl:sort select="cv:omschrijving_NL" />
+              <xsl:sort select="cv:omschrijving_UK" />
           </xsl:apply-templates>
         </xsl:if>
         <!--
@@ -804,7 +804,7 @@
         <w:pStyle w:val="Valori-tabel"/>
       </w:pPr>
       <w:r w:rsidRPr="002E2E53">
-        <w:t><xsl:value-of select="cv:taal_NL" /></w:t>
+        <w:t><xsl:value-of select="cv:taal_UK" /></w:t>
         <w:tab/>
       </w:r>
       <w:r w:rsidR="00DE6855" w:rsidRPr="002271D3">
@@ -824,7 +824,7 @@
         <w:pStyle w:val="Valori-tabel"/>
       </w:pPr>
       <w:r>
-        <w:t><xsl:value-of select="cv:omschrijving_NL" /></w:t>
+        <w:t><xsl:value-of select="cv:omschrijving_UK" /></w:t>
         <w:tab/>
       </w:r>
       <w:r w:rsidR="00DE6855" w:rsidRPr="002271D3">
@@ -957,7 +957,7 @@
         </w:tcPr>
         <w:p w:rsidR="00902CB9" w:rsidRPr="00CE4E21" w:rsidRDefault="00902CB9" w:rsidP="00BA62E2">
           <w:r w:rsidRPr="00CE4E21">
-            <w:t><xsl:value-of select="cv:omschrijving_nl_NL" /></w:t>
+            <w:t><xsl:value-of select="cv:omschrijving_uk_UK" /></w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -1001,12 +1001,12 @@
         <w:t>
           <xsl:value-of select="cv:naam_referent" />
           <xsl:text>, </xsl:text>
-          <xsl:value-of select="cv:functie_referent_nl_NL" />
+          <xsl:value-of select="cv:functie_referent_uk_UK" />
         </w:t>
       </w:r>
     </w:p>
     <w:p w:rsidR="00EA114C" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-      <xsl:apply-templates select="cv:omschrijving_nl_NL" mode="format-text" />
+      <xsl:apply-templates select="cv:omschrijving_uk_UK" mode="format-text" />
     </w:p>
   </xsl:template>
 

@@ -689,7 +689,7 @@
           INTERESSES
           
         -->
-        <xsl:variable name="interesses" select="//cv:interesse" />
+        <xsl:variable name="interesses" select="//cv:interesses" />
         <xsl:if test="$interesses">
           <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
             <w:pPr>
@@ -706,7 +706,7 @@
           REFERENTIES
           
         -->
-        <xsl:variable name="referenties" select="//cv:referentie" />
+        <xsl:variable name="referenties" select="//cv:referentie[cv:opnemen_in_cv = 1]" />
         <xsl:if test="$referenties">
           <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
             <w:pPr>
@@ -716,7 +716,7 @@
               <w:t>References</w:t>
             </w:r>
           </w:p>
-          <xsl:apply-templates select="$referentes" />
+          <xsl:apply-templates select="$referenties" />
         </xsl:if>
         <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C">
           <w:pPr>
@@ -736,7 +736,7 @@
             <w:pStyle w:val="Kop1"/>
           </w:pPr>
           <w:r>
-            <w:t>Work eperience</w:t>
+            <w:t>Work Experience</w:t>
           </w:r>
         </w:p>
         <w:tbl>
@@ -983,7 +983,7 @@
     </w:tr>
   </xsl:template>
 
-  <xsl:template match="cv:interesse">
+  <xsl:template match="cv:interesses">
     <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="004609AB">
       <w:pPr>
         <w:pStyle w:val="Paragraaf"/>
@@ -998,11 +998,15 @@
         <w:pStyle w:val="Kop2"/>
       </w:pPr>
       <w:r w:rsidRPr="00902CB9">
-        <w:t><xsl:value-of select="cv:naam_referent" /> <xsl:value-of select="cv:functie_referent" /></w:t>
+        <w:t>
+          <xsl:value-of select="cv:naam_referent" />
+          <xsl:text>, </xsl:text>
+          <xsl:value-of select="cv:functie_referent_nl_NL" />
+        </w:t>
       </w:r>
     </w:p>
     <w:p w:rsidR="00EA114C" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-      <xsl:apply-templates select="cv:referentie_text" mode="format-text" />
+      <xsl:apply-templates select="cv:omschrijving_nl_NL" mode="format-text" />
     </w:p>
   </xsl:template>
 

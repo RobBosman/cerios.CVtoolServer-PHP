@@ -315,6 +315,39 @@
             </w:sectPr>
           </w:pPr>
         </w:p>
+        <w:p w:rsidR="002E2E53" w:rsidRDefault="002E2E53" w:rsidP="002E2E53">
+          <w:pPr>
+            <w:pStyle w:val="Valori-tabel"/>
+            <w:spacing w:before="120"/>
+          </w:pPr>
+          <w:r w:rsidRPr="002E2E53">
+            <w:rPr>
+              <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings"/>
+            </w:rPr>
+            <w:t></w:t>
+          </w:r>
+          <w:r w:rsidRPr="002E2E53">
+            <w:t xml:space="preserve">Foundation   </w:t>
+          </w:r>
+          <w:r w:rsidRPr="002E2E53">
+            <w:rPr>
+              <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings"/>
+            </w:rPr>
+            <w:t></w:t>
+          </w:r>
+          <w:r w:rsidRPr="002E2E53">
+            <w:t xml:space="preserve">Advanced   </w:t>
+          </w:r>
+          <w:r w:rsidRPr="002E2E53">
+            <w:rPr>
+              <w:rFonts w:ascii="Wingdings" w:hAnsi="Wingdings"/>
+            </w:rPr>
+            <w:t></w:t>
+          </w:r>
+          <w:r w:rsidRPr="002E2E53">
+            <w:t>Expert</w:t>
+          </w:r>
+        </w:p>
         <!--
         
           WERKERVARING
@@ -745,15 +778,15 @@
             <w:tblW w:w="0" w:type="auto"/>
             <w:tblInd w:w="-5" w:type="dxa"/>
             <w:tblBorders>
-              <w:top w:val="none" w:sz="0" w:space="0" w:color="auto"/>
+              <w:top w:val="single" w:sz="0" w:space="0" w:color="F4931E"/>
               <w:left w:val="none" w:sz="0" w:space="0" w:color="auto"/>
               <w:bottom w:val="single" w:sz="4" w:space="0" w:color="F4931E"/>
               <w:right w:val="none" w:sz="0" w:space="0" w:color="auto"/>
               <w:insideH w:val="single" w:sz="4" w:space="0" w:color="F4931E"/>
-              <w:insideV w:val="none" w:sz="4" w:space="0" w:color="auto"/>
+              <w:insideV w:val="dashed" w:sz="4" w:space="0" w:color="F4931E"/>
             </w:tblBorders>
             <w:tblCellMar>
-              <w:left w:w="0" w:type="dxa"/>
+              <w:left w:w="80" w:type="dxa"/>
               <w:right w:w="0" w:type="dxa"/>
             </w:tblCellMar>
             <w:tblLook w:val="04A0" w:firstRow="1" w:lastRow="0" w:firstColumn="1" w:lastColumn="0" w:noHBand="0" w:noVBand="1"/>

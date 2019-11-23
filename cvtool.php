@@ -21,7 +21,6 @@ if (isset($appName)) {
     echo "$jwt|$accountId";
   }
 } else {
-  $openIDConnect = new OpenIDConnect();
-  $openIDConnect->authenticate(REDIRECT_URL, HOSTED_DOMAIN, LEGACY_REALM);
+  OpenIDConnect::authenticate(REDIRECT_URL, HOSTED_DOMAIN, LEGACY_REALM);
   header("Location: CVtool.html");
 }

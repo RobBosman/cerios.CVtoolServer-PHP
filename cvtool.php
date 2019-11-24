@@ -17,9 +17,11 @@ if (isset($appName)) {
   $jwt = OpenIDConnect::getParkedJWT();
   if ($jwt != NULL) {
     $accountId = AuthHandler::getSignedInAccountId($appName, $jwt);
-    header('Content-type: text/plain');
-    echo "$jwt|$accountId";
+  } else {
+    $accountId = '';
   }
+  header('Content-type: text/plain');
+  echo "$jwt|$accountId";
 } else {
   OpenIDConnect::authenticate(REDIRECT_URL, HOSTED_DOMAIN, LEGACY_REALM);
   header("Location: CVtool.html");

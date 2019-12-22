@@ -1,19 +1,17 @@
 <?php
 
-require_once realpath(dirname(__FILE__) . '/php/alfresco/AlfrescoPublisher.class.php');
+require_once realpath(dirname(__FILE__) . '/php/sharepoint/SharePointPublisher.class.php');
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //
 // Here is an example-request to this PHP-script:
 //
-// http://localhost:9080/cvtool/publishToAlfresco.php?restTarget=cv/_account/75&locale=nl_NL&layout=Cerios
+// http://localhost:9080/cvtool/publishToSharePoint.php?restTarget=cv/_account/69&locale=nl_NL&layout=Valori
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
-$responseContent = NULL;
-$responseCode = NULL;
 try {
-    $publisher = new AlfrescoPublisher();
+    $publisher = new SharePointPublisher();
     $responseContent = $publisher->publish();
     $responseCode = HttpResponseCodes::HTTP_OK;
 } catch (Exception $e) {

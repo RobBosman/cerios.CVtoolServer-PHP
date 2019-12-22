@@ -43,5 +43,5 @@ Flex client:
 cv.php:
 	fetch cv- and businessunit-data from REST server
 
-Alfresco publish.php:
+SharePoint publish.php:
 	fetch cv-data and businessunit-name

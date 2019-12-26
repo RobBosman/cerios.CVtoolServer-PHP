@@ -6,14 +6,14 @@ require_once realpath(dirname(__FILE__) . '/php/docx/CvGenerator.class.php');
 //
 // Here is an example-request to this PHP-script:
 //
-//     http://localhost:9080/cvtool/generateCvDocx.php?restTarget=cv/_account/69&locale=uk_UK&layout=Cerios
+//     http://localhost:9080/cvtool/generateCvDocx.php?restTarget=cv/_account/69&locale=uk_UK&layout=Valori&jwt=[JWT
 //
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 
 $cvGenerator = new CvGenerator();
 $contentFileName = $cvGenerator->getContentFilename();
 //$content = file_get_contents($contentFileName);
-$docxFileName = $cvGenerator->getOutputFileName() . '.docx';
+$docxFileName = $cvGenerator->getOutputFileName();
 // Remove spaces from the file name to please FireFox.
 $docxFileName = str_replace(' ', '_', $docxFileName);
 

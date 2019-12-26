@@ -23,10 +23,12 @@ class CvGenerator {
     private $contentFilename;
     private $outputFilename;
 
-    public function __construct() {
+    public function __construct($jwt = NULL) {
         // Determine the restTarget, language and layout.
         $restTarget = filter_input(INPUT_POST, self::TAG_REST_TARGET);
-        $jwt = filter_input(INPUT_POST, self::TAG_JWT);
+        if ($jwt == NULL) {
+            $jwt = filter_input(INPUT_POST, self::TAG_JWT);
+        }
         $this->locale = filter_input(INPUT_POST, self::TAG_LOCALE);
         if ($this->locale == NULL) {
             $this->locale = 'nl_NL';
@@ -60,7 +62,7 @@ class CvGenerator {
     public function getContentFilename() {
         return $this->contentFilename;
     }
-    
+
     private function generateDocx() {
         // Use the model-XML to generate several files needed to compose the DOCX document.
         $docxComponents = array();
@@ -84,7 +86,7 @@ class CvGenerator {
 
         $sourceFile = $this->getSourceFile("$this->templateName/template_$this->templateName.docx");
         $this->contentFilename = $this->createTempZipFile($docxComponents, $sourceFile);
-        $this->outputFilename = $this->xslTransform("file_name.xsl");
+        $this->outputFilename = $this->xslTransform("file_name.xsl"). '.docx';
     }
 
     private function getXmlData($restTarget, $jwt) {
@@ -114,7 +116,7 @@ class CvGenerator {
 
     private function createTempZipFile(array &$docxComponents, $templateCvFilename) {
         // Copy the template document to a temporary file.
-        $zipFilename = @tempnam('/tmp', 'cv_');
+        $zipFilename = @tempnam(sys_get_temp_dir(), 'cv_');
         if (copy($templateCvFilename, $zipFilename) !== TRUE) {
             error_log("Cannot copy '$templateCvFilename' to '$zipFilename'.");
             exit("Cannot copy '$templateCvFilename' to '$zipFilename'.");
@@ -145,6 +147,7 @@ class CvGenerator {
     private function getSourceFile($relativePath) {
         return realpath(dirname(__FILE__) . "/$relativePath");
     }
+
 }
 
 ?>

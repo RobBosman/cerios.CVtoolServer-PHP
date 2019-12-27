@@ -13,8 +13,9 @@ Bootstrap::import('nl.bransom.http.InternetMediaTypes');
  */
 class SharePointPublisher {
 
-    // https://graph.microsoft.com/v1.0/sites/valorinl.sharepoint.com:/sites/Kantoor/CV_databank:/drives
+    // @see https://graph.microsoft.com/v1.0/sites/valorinl.sharepoint.com:/sites/Kantoor/CV_databank:/drives
     const MICROSOFT_GRAPH_URL = 'https://graph.microsoft.com/v1.0';
+    const SHAREPOINT_URL = 'https://valorinl.sharepoint.com/sites/Kantoor/CV_databank';
     const SHAREPOINT_DRIVE_ID = 'b!gLiE74guVky6WpGe8UeHoQpRlL29QE1DlsiezwivnSPlIbtUWgXZQ4RgG4YWa77n'; // 'CV Databank'
     const TAG_MEDIATYPE_DOCX = 'docx';
 
@@ -27,23 +28,13 @@ class SharePointPublisher {
         $cvGenerator = new CvGenerator($jwt);
         $documentName = $cvGenerator->getOutputFileName();
 
-        
         // Find the target file (and folder) in SharePoint to store the cv document.
-        $sharePointSearchURL = self::MICROSOFT_GRAPH_URL
-                . "/drives/" . self::SHAREPOINT_DRIVE_ID
-                . "/root/search(q='" . urlencode($userName) . "')"
-                . "?select=name,id,folder,file";
-        $responseJson = NULL;
-        $responseCode = $this->getUrlToJson($sharePointSearchURL, $jwt, $responseJson);
-        if (!HttpResponseCodes::isSuccessCode($responseCode)) {
-            throw new Exception("Error searching SharePoint: $responseCode", HttpResponseCodes::HTTP_NOT_FOUND);
-        }
+        $searchJson = $this->findSharePointFolder($jwt, $userName, $documentName);
 
-        
         // Get the id of the target folder and check if the target file already exists.
         $sharePointFolderID = NULL;
         $sharePointFileID = NULL;
-        foreach ($responseJson->value as $value) {
+        foreach ($searchJson->value as $value) {
             if (isset($value->file) && $value->name == $documentName) {
                 $sharePointFileID = $value->id;
             } else if (isset($value->folder) && $value->name == $userName) {
@@ -51,40 +42,22 @@ class SharePointPublisher {
             }
         }
         
-        
         // If the target file does not exist, then create a placeholder for it in SharePoint.
         if ($sharePointFileID == NULL) {
             if ($sharePointFolderID == NULL) {
-                throw new Exception("Cannot find folder '$userName' in SharePoint 'CV Databank'", HttpResponseCodes::HTTP_NOT_FOUND);
+                throw new Exception("Ik kan SharePoint folder '$userName' in de 'CV Databank' niet vinden."
+                        . " Upload het bestand '$documentName' zelf even naar de juiste locatie in SharePoint,"
+                        . " dan kan ik het de volgende keer zelf! :-)"
+                        . "<a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>",
+                        HttpResponseCodes::HTTP_NOT_FOUND);
             }
-            // Create a place-holder for the cv document.
-            $sharePointAddURL = self::MICROSOFT_GRAPH_URL
-                    . "/drives/" . self::SHAREPOINT_DRIVE_ID
-                    . "/items/$sharePointFolderID/children";
-            $postJson = "{'name':'$documentName','file':{}}";
-            $responseCode = $this->postUrlToJson($sharePointAddURL, $jwt, $postJson, $responseJson);
-            if (!HttpResponseCodes::isSuccessCode($responseCode)) {
-                throw new Exception("Error creating document '$documentName' in SharePoint: $responseCode", HttpResponseCodes::HTTP_NOT_FOUND);
-            }
-            // Get the ID of the newly created SharePoint document.
-            if (!isset($responseJson->id)) {
-                throw new Exception("Error getting id of document '$documentName' in SharePoint: $responseCode", HttpResponseCodes::HTTP_NOT_FOUND);
-            }
-            $sharePointFileID = $responseJson->id;
+            $sharePointFileID = $this->createSharePointFile($jwt, $documentName, $sharePointFolderID);
         }
-        
         
         // Upload the new cv content to SharePoint.
-        $sharePointUploadURL = self::MICROSOFT_GRAPH_URL
-                . "/drives/" . self::SHAREPOINT_DRIVE_ID
-                . "/items/$sharePointFileID/content";
-        $responseCode = $this->putUrlToJson($sharePointUploadURL, $jwt, $cvGenerator->getContentFilename(), $responseJson);
-        if (!HttpResponseCodes::isSuccessCode($responseCode)) {
-            // 423 = 'locked'
-            throw new Exception("Error uploading document '$documentName' to SharePoint: $responseCode", HttpResponseCodes::HTTP_NOT_FOUND);
-        }
+        $this->uploadSharePointFile($jwt, $sharePointFileID, $documentName, $cvGenerator->getContentFilename());
 
-        return "'$documentName' is opgeslagen in SharePoint";
+        return "'$documentName' is opgeslagen in SharePoint folder '$userName' in de 'CV Databank'";
     }
 
     private function getUserNameFromJwt($jwt) {
@@ -94,6 +67,22 @@ class SharePointPublisher {
         }
         $jwtPayload = json_decode(base64_decode($jwtParts[1]));
         return $jwtPayload->name;
+    }
+    
+    private function findSharePointFolder($jwt, $userName, $documentName) {
+        $sharePointSearchURL = self::MICROSOFT_GRAPH_URL
+                . "/drives/" . self::SHAREPOINT_DRIVE_ID
+                . "/root/search(q='" . urlencode($userName) . "')"
+                . "?select=name,id,folder,file";
+        $responseJson = NULL;
+        $responseCode = $this->getUrlToJson($sharePointSearchURL, $jwt, $responseJson);
+        if (!HttpResponseCodes::isSuccessCode($responseCode)) {
+            throw new Exception("Er ging iets mis met de verbinding met SharePoint."
+                    . " Upload het bestand '$documentName' zelf even naar de juiste locatie in SharePoint,"
+                    . " zie <a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>",
+                    $responseCode);
+        }
+        return $responseJson;
     }
 
     private function getUrlToJson($url, $jwt, &$downloadedJson) {
@@ -116,7 +105,7 @@ class SharePointPublisher {
         $lastError = error_get_last();
         error_reporting(E_ALL);
         if ((isset($lastError['message'])) and (stripos($lastError['message'], 'magic_quotes_gpc') === FALSE)) {
-            throw new Exception("Error invoking URL ($responseError) - " . $lastError['message'],
+            throw new Exception("Er ging iets mis met de verbinding met SharePoint: $responseError - " . $lastError['message'],
                     HttpResponseCodes::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -124,6 +113,30 @@ class SharePointPublisher {
             $downloadedJson = json_decode($downloadedContent);
         }
         return $responseCode;
+    }
+    
+    private function createSharePointFile($jwt, $documentName, $sharePointFolderID) {
+        // Create a place-holder for the cv document.
+        $sharePointAddURL = self::MICROSOFT_GRAPH_URL
+                . "/drives/" . self::SHAREPOINT_DRIVE_ID
+                . "/items/$sharePointFolderID/children";
+        $postJson = "{'name':'$documentName','file':{}}";
+        $responseJson = NULL;
+        $responseCode = $this->postUrlToJson($sharePointAddURL, $jwt, $postJson, $responseJson);
+        if (!HttpResponseCodes::isSuccessCode($responseCode)) {
+            throw new Exception("Er ging iets mis bij het aanmaken van het document '$documentName' in SharePoint."
+                    . " Upload het bestand '$documentName' zelf even naar de juiste locatie in SharePoint,"
+                    . " zie <a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>",
+                    $responseCode);
+        }
+        // Get the ID of the newly created SharePoint document.
+        if (!isset($responseJson->id)) {
+            throw new Exception("Er is iets misgegaan bij het aanmaken van het document '$documentName' in SharePoint."
+                    . " Upload het bestand '$documentName' zelf even naar de juiste locatie in SharePoint,"
+                    . " zie <a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>",
+                    $responseCode);
+        }
+        return $responseJson->id;
     }
 
     private function postUrlToJson($url, $jwt, $postJson, &$downloadedJson) {
@@ -149,7 +162,7 @@ class SharePointPublisher {
         $lastError = error_get_last();
         error_reporting(E_ALL);
         if ((isset($lastError['message'])) and (stripos($lastError['message'], 'magic_quotes_gpc') === FALSE)) {
-            throw new Exception("Error invoking URL ($responseError) - " . $lastError['message'],
+            throw new Exception("Er ging iets mis met de verbinding met SharePoint: $responseError - " . $lastError['message'],
                     HttpResponseCodes::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -157,6 +170,27 @@ class SharePointPublisher {
             $downloadedJson = json_decode($downloadedContent);
         }
         return $responseCode;
+    }
+    
+    private function uploadSharePointFile($jwt, $sharePointFileID, $documentName, $contentFilename) {
+        $sharePointUploadURL = self::MICROSOFT_GRAPH_URL
+                . "/drives/" . self::SHAREPOINT_DRIVE_ID
+                . "/items/$sharePointFileID/content";
+        $responseJson = NULL;
+        $responseCode = $this->putUrlToJson($sharePointUploadURL, $jwt, $contentFilename, $responseJson);
+        if (!HttpResponseCodes::isSuccessCode($responseCode)) {
+            if ($responseCode == HttpResponseCodes::HTTP_LOCKED) {
+                $errorMag = "Ik kan het document '$documentName' niet uploaden naar SharePoint, omdat het huidige SharePoint document vergrendeld is."
+                        . " Upload het bestand zelf even naar de juiste locatie in SharePoint,"
+                        . " zie <a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>"
+                        . "Of probeer het later nog eens, want meestal wordt zo'n vergrendeling na 10 minuten vanzelf verwijderd.";
+            } else {
+                $errorMag = "Er ging iets mis bij het uploaden van het document '$documentName' naar SharePoint."
+                        . " Upload het bestand '$documentName' zelf even naar de juiste locatie in SharePoint,"
+                        . " zie <a target='blank' href='" . self::SHAREPOINT_URL . "'><u>" . self::SHAREPOINT_URL . "</u></a>";
+            }
+            throw new Exception($errorMag, $responseCode);
+        }
     }
 
     private function putUrlToJson($url, $jwt, $contentFileName, &$downloadedJson) {
@@ -190,7 +224,7 @@ class SharePointPublisher {
         $lastError = error_get_last();
         error_reporting(E_ALL);
         if ((isset($lastError['message'])) and (stripos($lastError['message'], 'magic_quotes_gpc') === FALSE)) {
-            throw new Exception("Error invoking URL ($responseError) - " . $lastError['message'],
+            throw new Exception("Er ging iets mis met de verbinding met SharePoint: $responseError - " . $lastError['message'],
                     HttpResponseCodes::HTTP_INTERNAL_SERVER_ERROR);
         }
 
@@ -200,5 +234,3 @@ class SharePointPublisher {
         return $responseCode;
     }
 }
-
-?>

@@ -57,7 +57,7 @@ class SharePointPublisher {
         // Upload the new cv content to SharePoint.
         $this->uploadSharePointFile($jwt, $sharePointFileID, $documentName, $cvGenerator->getContentFilename());
 
-        return "'$documentName' is opgeslagen in SharePoint folder '$userName' in de 'CV Databank'";
+        return "'$documentName' is opgeslagen in SharePoint folder '$userName'\nin de 'CV Databank'";
     }
 
     private function getUserNameFromJwt($jwt) {

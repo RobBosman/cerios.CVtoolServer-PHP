@@ -7,10 +7,11 @@ Bootstrap::initConfig(dirname(__FILE__) . '/../bransom/config/config.ini');
 Bootstrap::import('nl.bransom.auth.AuthHandler');
 Bootstrap::import('nl.bransom.auth.OpenIDConnect.OpenIDConnect');
 
-const OPENID_REDIRECT_URL = 'https://cvtool.cerios.nl/cvtool/cvtool.php';
-// const OPENID_REDIRECT_URL = 'http://localhost:9080/cvtool/cvtool.php';
 const OPENID_SCOPE = 'openid Sites.ReadWrite.All Files.ReadWrite';
 const OPENID_DOMAIN = 'valori.nl';
+
+$server = filter_input_array(INPUT_SERVER);
+$OPENID_REDIRECT_URL = (isset($server['HTTPS']) ? 'https' : 'http') . '://' . $server['HTTP_HOST'] . '/cvtool/cvtool.php';
 
 $appName = filter_input(INPUT_GET, 'getAuthorization');
 if (isset($appName)) {
@@ -23,6 +24,6 @@ if (isset($appName)) {
     header('Content-type: text/plain');
     echo "$jwt|$accountId";
 } else {
-    OpenIDConnect::authenticate(OPENID_REDIRECT_URL, OPENID_SCOPE, OPENID_DOMAIN);
+    OpenIDConnect::authenticate($OPENID_REDIRECT_URL, OPENID_SCOPE, OPENID_DOMAIN);
     header("Location: CVtool.html");
 }

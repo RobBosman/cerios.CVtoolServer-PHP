@@ -353,7 +353,8 @@
         -->
         <xsl:variable name="werkopdrachten"
                       select="//cv:werkopdracht[(cv:opnemen_in_cv = 1)
-                              and (normalize-space(cv:werkgever) or normalize-space(cv:opdrachtgever))]" />
+                              and normalize-space(concat(cv:werkgever, cv:opdrachtgever))
+                              and normalize-space(cv:werkervaring[cv:locale = $locale]/cv:opdrachtformulering)]" />
         <w:p w:rsidR="00A37916" w:rsidRDefault="002E2E53" w:rsidP="002E2E53">
           <w:pPr>
             <w:pStyle w:val="Kop1"/>
@@ -1041,6 +1042,17 @@
     </w:p>
   </xsl:template>
 
+  <xsl:template match="cv:werkopdracht" mode="opdrachtgever">
+    <xsl:choose>
+      <xsl:when test="normalize-space(cv:opdrachtgever)">
+        <xsl:value-of select="normalize-space(cv:opdrachtgever)" />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="normalize-space(cv:werkgever)" />
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
   <xsl:template match="cv:werkopdracht" mode="overzicht">
     <xsl:variable name="werkervaring" select="cv:werkervaring[cv:locale = $locale]" />
     <w:tr w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidTr="005E4B3F">
@@ -1079,7 +1091,7 @@
         </w:tcPr>
         <w:p w:rsidR="00CE4E21" w:rsidRPr="00CE4E21" w:rsidRDefault="00CE4E21" w:rsidP="00CE4E21">
           <w:r w:rsidRPr="00CE4E21">
-            <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+            <w:t><xsl:apply-templates select="." mode="opdrachtgever" /></w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -1133,7 +1145,7 @@
             <w:rPr>
               <w:color w:val="F39900"/>
             </w:rPr>
-            <w:t><xsl:value-of select="cv:opdrachtgever" /></w:t>
+            <w:t><xsl:apply-templates select="." mode="opdrachtgever" /></w:t>
           </w:r>
         </w:p>
       </w:tc>
@@ -1201,5 +1213,5 @@
       </w:tc>
     </w:tr>
   </xsl:template>
-  
+
 </xsl:stylesheet>

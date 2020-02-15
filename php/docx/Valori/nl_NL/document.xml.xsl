@@ -947,22 +947,35 @@
           <w:r>
             <w:t><xsl:value-of select="cv:jaar_diploma" /></w:t>
           </w:r>
-          <w:r w:rsidRPr="002271D3">
-            <w:rPr>
-              <w:rStyle w:val="Valori-geel"/>
-            </w:rPr>
-            <w:t xml:space="preserve"> // </w:t>
-          </w:r>
-          <w:r w:rsidRPr="00CE4E21">
-            <w:t>
-              <xsl:if test="cv:diploma = 1">
-                <xsl:text>diploma</xsl:text>
-              </xsl:if>
-              <xsl:if test="cv:diploma = 2">
-                <xsl:text>certificaat</xsl:text>
-              </xsl:if>
-            </w:t>
-          </w:r>
+          <xsl:choose>
+            <xsl:when test="((not(cv:soort_opleiding) or cv:soort_opleiding = 0) and cv:diploma != 1)
+                            or (cv:soort_opleiding > 0 and cv:diploma != 2)">
+              <w:r w:rsidRPr="002271D3">
+                <w:rPr>
+                  <w:rStyle w:val="Valori-geel"/>
+                </w:rPr>
+                <w:t xml:space="preserve"> // </w:t>
+              </w:r>
+              <w:r w:rsidRPr="00CE4E21">
+                <w:t>
+                  <xsl:choose>
+                    <xsl:when test="cv:diploma = 0">
+                      <xsl:text>niet voltooid</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="cv:diploma = 1">
+                      <xsl:text>diploma</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="cv:diploma = 2">
+                      <xsl:text>certificaat</xsl:text>
+                    </xsl:when>
+                    <xsl:when test="cv:diploma = 3">
+                      <xsl:text>nvt</xsl:text>
+                    </xsl:when>
+                  </xsl:choose>
+                </w:t>
+              </w:r>
+            </xsl:when>
+          </xsl:choose>
         </w:p>
       </w:tc>
     </w:tr>

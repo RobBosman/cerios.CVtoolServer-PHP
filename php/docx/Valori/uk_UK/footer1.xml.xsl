@@ -66,7 +66,7 @@
             <w:szCs w:val="16"/>
           </w:rPr>
           <w:t>
-            <xsl:text>Curriculum vitae van </xsl:text>
+            <xsl:text>Curriculum vitae of </xsl:text>
             <xsl:apply-templates select="//cv:persoonsgegevens" mode="full-name" />
           </w:t>
         </w:r>
@@ -146,7 +146,7 @@
             <w:sz w:val="16"/>
             <w:szCs w:val="16"/>
           </w:rPr>
-          <w:t xml:space="preserve"> van </w:t>
+          <w:t xml:space="preserve"> of </w:t>
         </w:r>
         <w:r w:rsidR="00011166" w:rsidRPr="00DE7F23">
           <w:rPr>

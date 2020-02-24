@@ -37,7 +37,7 @@
 
   <xsl:template match="* | @* | text()" mode="skill-category">
     <xsl:choose>
-      <xsl:when test=". = 'Expertises'">Special skills</xsl:when>
+      <xsl:when test=". = 'Expertises'">Special Skills</xsl:when>
       <xsl:when test=". = 'Applicaties'">Applications</xsl:when>
       <xsl:when test=". = 'OS en Netwerken'">OS and Networks</xsl:when>
       <xsl:when test=". = 'Programmeren'">Programming</xsl:when>

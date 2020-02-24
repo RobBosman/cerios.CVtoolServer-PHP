@@ -721,7 +721,7 @@
           INTERESSES
           
         -->
-        <xsl:variable name="interesses" select="//cv:interesses" />
+        <xsl:variable name="interesses" select="//cv:profiel[cv:locale = $locale]/cv:interesses" />
         <xsl:if test="$interesses">
           <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
             <w:pPr>
@@ -883,7 +883,7 @@
           <xsl:if test="$next_column">
             <w:br w:type="column"/>
           </xsl:if>
-          <w:t><xsl:value-of select="$categorie" /></w:t>
+          <w:t><xsl:apply-templates select="$vaardigheden[1]/cv:categorie" mode="skill-category" /></w:t>
         </w:r>
       </w:p>
       <xsl:apply-templates select="$vaardigheden">

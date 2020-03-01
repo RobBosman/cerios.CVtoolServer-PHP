@@ -168,28 +168,13 @@
           </w:r>
         </w:p>
         <xsl:if test="normalize-space($profiel/cv:profiel)">
-          <w:p w:rsidR="00403D6F" w:rsidRDefault="00D63E1B" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$profiel/cv:profiel" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$profiel/cv:profiel" mode="markdown" />
         </xsl:if>
         <xsl:if test="normalize-space($profiel/cv:persoonlijke_eigenschappen)">
-          <w:p w:rsidR="00403D6F" w:rsidRDefault="00D63E1B" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$profiel/cv:persoonlijke_eigenschappen" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$profiel/cv:persoonlijke_eigenschappen" mode="markdown" />
         </xsl:if>
         <xsl:if test="normalize-space($profiel/cv:vaardigheden)">
-          <w:p w:rsidR="00403D6F" w:rsidRDefault="00D63E1B" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$profiel/cv:vaardigheden" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$profiel/cv:vaardigheden" mode="markdown" />
         </xsl:if>
         <!--
         
@@ -1029,12 +1014,7 @@
   </xsl:template>
 
   <xsl:template match="cv:interesses">
-    <w:p w:rsidR="00902CB9" w:rsidRDefault="00902CB9" w:rsidP="004609AB">
-      <w:pPr>
-        <w:pStyle w:val="Paragraaf"/>
-      </w:pPr>
-      <xsl:apply-templates select="." mode="format-text" />
-    </w:p>
+    <xsl:apply-templates select="." mode="markdown" />
   </xsl:template>
   
   <xsl:template match="cv:referentie">
@@ -1050,9 +1030,7 @@
         </w:t>
       </w:r>
     </w:p>
-    <w:p w:rsidR="00EA114C" w:rsidRDefault="00902CB9" w:rsidP="00902CB9">
-      <xsl:apply-templates select="cv:omschrijving_uk_UK" mode="format-text" />
-    </w:p>
+    <xsl:apply-templates select="cv:omschrijving_uk_UK" mode="markdown" />
   </xsl:template>
 
   <xsl:template match="cv:werkopdracht" mode="opdrachtgever">
@@ -1166,12 +1144,7 @@
         <w:tcPr>
           <w:tcW w:w="6946" w:type="dxa"/>
         </w:tcPr>
-        <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-          <w:pPr>
-            <w:pStyle w:val="Paragraaf"/>
-          </w:pPr>
-          <xsl:apply-templates select="$werkervaring/cv:opdrachtformulering" mode="format-text" />
-        </w:p>
+        <xsl:apply-templates select="$werkervaring/cv:opdrachtformulering" mode="markdown" />
         <xsl:if test="normalize-space($werkervaring/cv:werkzaamheden)">
           <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
             <w:pPr>
@@ -1182,12 +1155,7 @@
               <w:t>Tasks/activities</w:t>
             </w:r>
           </w:p>
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$werkervaring/cv:werkzaamheden" mode="markdown" />
         </xsl:if>
         <xsl:if test="normalize-space($werkervaring/cv:resultaat)">
           <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
@@ -1199,12 +1167,7 @@
               <w:t>Result</w:t>
             </w:r>
           </w:p>
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$werkervaring/cv:resultaat" mode="markdown" />
         </xsl:if>
         <xsl:if test="normalize-space($werkervaring/cv:steekwoorden)">
           <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="0081312E">
@@ -1216,12 +1179,7 @@
               <w:t>Working environment</w:t>
             </w:r>
           </w:p>
-          <w:p w:rsidR="00936F5B" w:rsidRPr="00CE4E21" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf"/>
-            </w:pPr>
-            <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="format-text" />
-          </w:p>
+          <xsl:apply-templates select="$werkervaring/cv:steekwoorden" mode="markdown" />
         </xsl:if>
       </w:tc>
     </w:tr>

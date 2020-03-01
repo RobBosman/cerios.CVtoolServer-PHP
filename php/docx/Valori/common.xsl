@@ -37,35 +37,55 @@
     </w:r>
   </xsl:template>
 
-  <xsl:template match="* | @* | text()" mode="format-text">
-    <xsl:call-template name="substitute-line-breaks">
+  <xsl:template match="* | @* | text()" mode="markdown">
+    <xsl:call-template name="format-markdown">
       <xsl:with-param name="text" select="." />
     </xsl:call-template>
   </xsl:template>
 
-  <xsl:template name="substitute-line-breaks">
+  <xsl:template name="format-markdown">
     <xsl:param name="text" />
-    <xsl:variable name="line-break" select="'&#x0A;'" />
-    <w:r>
-      <xsl:choose>
-        <xsl:when test="contains($text, $line-break)">
-          <xsl:variable name="text-before-line-break" select="substring-before($text, $line-break)" />
-          <xsl:variable name="text-after-line-break" select="substring-after($text, $line-break)" />
-          <xsl:if test="$text-before-line-break">
-            <w:t><xsl:value-of select="$text-before-line-break" /></w:t>
-          </xsl:if>
-          <w:br />
-          <xsl:if test="$text-after-line-break">
-            <xsl:call-template name="substitute-line-breaks">
-              <xsl:with-param name="text" select="$text-after-line-break" />
-            </xsl:call-template>
-          </xsl:if>
-        </xsl:when>
-        <xsl:otherwise>
-          <w:t><xsl:value-of select="$text" /></w:t>
-        </xsl:otherwise>
-      </xsl:choose>
-    </w:r>
+    <xsl:choose>
+      <xsl:when test="contains($text, '&#x0A;')">
+        <xsl:call-template name="format-paragraph">
+          <xsl:with-param name="text" select="substring-before($text, '&#x0A;')" />
+        </xsl:call-template>
+        <xsl:call-template name="format-markdown">
+          <xsl:with-param name="text" select="substring-after($text, '&#x0A;')" />
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:call-template name="format-paragraph">
+          <xsl:with-param name="text" select="$text" />
+        </xsl:call-template>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
+  <xsl:template name="format-paragraph">
+    <xsl:param name="text" />
+    <xsl:choose>
+      <xsl:when test="starts-with($text, '* ')">
+        <w:p w:rsidR="00181F85" w:rsidRPr="00181F85" w:rsidRDefault="00181F85" w:rsidP="00181F85">
+          <w:pPr>
+            <w:pStyle w:val="Lijst-bullets"/>
+          </w:pPr>
+          <w:r>
+            <w:t><xsl:value-of select="substring($text, 3)" /></w:t>
+          </w:r>
+        </w:p>
+      </xsl:when>
+        <xsl:when test="$text">
+          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+            <w:pPr>
+              <w:pStyle w:val="Paragraaf" />
+            </w:pPr>
+            <w:r>
+              <w:t><xsl:value-of select="$text" /></w:t>
+            </w:r>
+          </w:p>
+        </xsl:when>
+    </xsl:choose>
+  </xsl:template>
+  
 </xsl:stylesheet>

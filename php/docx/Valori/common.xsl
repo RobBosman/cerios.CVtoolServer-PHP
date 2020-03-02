@@ -75,16 +75,26 @@
           </w:r>
         </w:p>
       </xsl:when>
-        <xsl:when test="$text">
-          <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
-            <w:pPr>
-              <w:pStyle w:val="Paragraaf" />
-            </w:pPr>
-            <w:r>
-              <w:t><xsl:value-of select="$text" /></w:t>
-            </w:r>
-          </w:p>
-        </xsl:when>
+      <xsl:when test="starts-with($text, '# ')">
+        <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+          <w:pPr>
+            <w:pStyle w:val="Lijstalinea" />
+          </w:pPr>
+          <w:r>
+            <w:t><xsl:value-of select="substring($text, 3)" /></w:t>
+          </w:r>
+        </w:p>
+      </xsl:when>
+      <xsl:when test="$text">
+        <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+          <w:pPr>
+            <w:pStyle w:val="Paragraaf" />
+          </w:pPr>
+          <w:r>
+            <w:t><xsl:value-of select="$text" /></w:t>
+          </w:r>
+        </w:p>
+      </xsl:when>
     </xsl:choose>
   </xsl:template>
   

@@ -935,12 +935,16 @@
           <xsl:choose>
             <xsl:when test="((not(cv:soort_opleiding) or cv:soort_opleiding = 0) and cv:diploma != 1)
                             or (cv:soort_opleiding > 0 and cv:diploma != 2)">
-              <w:r w:rsidRPr="002271D3">
-                <w:rPr>
-                  <w:rStyle w:val="Valori-geel"/>
-                </w:rPr>
-                <w:t xml:space="preserve"> // </w:t>
-              </w:r>
+              <xsl:choose>
+                <xsl:when test="cv:jaar_diploma">
+                  <w:r w:rsidRPr="002271D3">
+                    <w:rPr>
+                      <w:rStyle w:val="Valori-geel"/>
+                    </w:rPr>
+                    <w:t xml:space="preserve"> // </w:t>
+                  </w:r>
+                </xsl:when>
+              </xsl:choose>
               <w:r w:rsidRPr="00CE4E21">
                 <w:t>
                   <xsl:choose>

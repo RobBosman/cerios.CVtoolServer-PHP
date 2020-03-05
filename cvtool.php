@@ -14,7 +14,7 @@ $server = filter_input_array(INPUT_SERVER);
 $OPENID_REDIRECT_URL = (isset($server['HTTPS']) ? 'https' : 'http') . '://' . $server['HTTP_HOST'] . '/cvtool/cvtool.php';
 
 $appName = filter_input(INPUT_GET, 'getAuthorization');
-if (isset($appName)) {
+if (isset($appName) && strlen($appName) > 0) {
     $jwt = OpenIDConnect::getParkedJWT();
     if ($jwt != NULL) {
         $accountId = AuthHandler::getSignedInAccountId($appName, $jwt);
@@ -26,4 +26,5 @@ if (isset($appName)) {
 } else {
     OpenIDConnect::authenticate($OPENID_REDIRECT_URL, OPENID_SCOPE, OPENID_DOMAIN);
     header("Location: CVtool.html");
+    exit();
 }

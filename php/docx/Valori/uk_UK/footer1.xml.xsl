@@ -49,7 +49,7 @@
             <w:sz w:val="14"/>
             <w:szCs w:val="14"/>
           </w:rPr>
-          <w:t>Innovation Starts with Testing</w:t>
+          <w:t>Building IT Quality</w:t>
         </w:r>
         <w:r>
           <w:rPr>

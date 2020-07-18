@@ -40,30 +40,44 @@
   <xsl:template match="* | @* | text()" mode="markdown">
     <xsl:call-template name="format-markdown">
       <xsl:with-param name="text" select="." />
+      <xsl:with-param name="listItemNumber">0</xsl:with-param>
     </xsl:call-template>
   </xsl:template>
 
   <xsl:template name="format-markdown">
     <xsl:param name="text" />
+    <xsl:param name="listItemNumber" />
+    <xsl:variable name="nextListItemNumber">
+      <xsl:choose>
+        <xsl:when test="starts-with($text, '# ')">
+          <xsl:value-of select="$listItemNumber + 1" />
+        </xsl:when>
+        <xsl:otherwise>0</xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
     <xsl:choose>
       <xsl:when test="contains($text, '&#x0A;')">
-        <xsl:call-template name="format-paragraph">
+        <xsl:call-template name="format-markdown-paragraph">
           <xsl:with-param name="text" select="substring-before($text, '&#x0A;')" />
+          <xsl:with-param name="listItemNumber" select="$nextListItemNumber" />
         </xsl:call-template>
         <xsl:call-template name="format-markdown">
           <xsl:with-param name="text" select="substring-after($text, '&#x0A;')" />
+          <xsl:with-param name="listItemNumber" select="$nextListItemNumber" />
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:call-template name="format-paragraph">
+        <xsl:call-template name="format-markdown-paragraph">
           <xsl:with-param name="text" select="$text" />
+          <xsl:with-param name="listItemNumber" select="$nextListItemNumber" />
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template name="format-paragraph">
+  <xsl:template name="format-markdown-paragraph">
     <xsl:param name="text" />
+    <xsl:param name="listItemNumber" />
     <xsl:choose>
       <xsl:when test="starts-with($text, '* ')">
         <w:p w:rsidR="00181F85" w:rsidRPr="00181F85" w:rsidRDefault="00181F85" w:rsidP="00181F85">
@@ -76,11 +90,13 @@
         </w:p>
       </xsl:when>
       <xsl:when test="starts-with($text, '# ')">
-        <w:p w:rsidR="00EA114C" w:rsidRDefault="00EA114C" w:rsidP="004609AB">
+        <w:p w:rsidR="00DA0696" w:rsidRDefault="00DA0696" w:rsidP="00DA0696">
           <w:pPr>
             <w:pStyle w:val="Lijstalinea" />
           </w:pPr>
           <w:r>
+            <w:t><xsl:value-of select="$listItemNumber" />.</w:t>
+            <w:tab/>
             <w:t><xsl:value-of select="substring($text, 3)" /></w:t>
           </w:r>
         </w:p>
